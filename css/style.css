@@ -1331,9 +1331,6 @@ footer a:hover { color: var(--white); }
   .nav-links li:nth-child(2) { animation-delay: 0.1s; }
   .nav-links li:nth-child(3) { animation-delay: 0.15s; }
   .nav-links li:nth-child(4) { animation-delay: 0.2s; }
-  .nav-links li:nth-child(5) { animation-delay: 0.25s; }
-  .nav-links li:nth-child(6) { animation-delay: 0.3s; }
-  .nav-links li:nth-child(7) { animation-delay: 0.35s; }
   .nav-links a { font-size: 1.4rem; color: var(--white); text-align: right; }
   .nav-cta { display: none; }
   .nav-toggle { display: block; margin-left: auto; position: relative; z-index: 201; }

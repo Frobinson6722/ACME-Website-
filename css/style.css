@@ -592,6 +592,70 @@ footer a:hover { color: var(--white); }
   font-weight: 600;
 }
 
+/* ── WEEKLY SCHEDULE ── */
+.weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.wk-header {
+  background: var(--green);
+  color: var(--white);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 8px;
+}
+
+.wk-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wk-card {
+  background: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wk-card strong {
+  font-size: 0.85rem;
+  color: var(--dark);
+}
+
+.wk-card span {
+  font-size: 0.75rem;
+  color: var(--gray);
+}
+
+.wk-card.wk-empty {
+  color: var(--gray);
+  font-size: 0.8rem;
+  font-style: italic;
+  border-style: dashed;
+  justify-content: center;
+  min-height: 60px;
+}
+
+@media (max-width: 800px) {
+  .weekly-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .wk-header { display: block; }
+  .wk-col { gap: 6px; }
+}
+
 /* ── CALENDAR ── */
 .cal-legend {
   display: flex;
@@ -728,6 +792,7 @@ footer a:hover { color: var(--white); }
   box-shadow: 0 4px 24px rgba(0,0,0,0.06);
   overflow-y: auto;
   align-self: start;
+  max-height: 560px;
 }
 
 .cal-sidebar-top {

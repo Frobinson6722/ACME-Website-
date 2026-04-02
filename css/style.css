@@ -6,7 +6,7 @@
   --cream: #EEECE2;
   --white: #FAFAFA;
   --gold: #F4A823;
-  --soft: #E8E6DC;
+  --soft: #E0DDD2;
   --gray: #6B6B6B;
   --border-light: #D6D3C8;
   --purple: #6366F1;
@@ -633,7 +633,7 @@ section {
   background: var(--white);
   border-radius: var(--radius);
   padding: 48px 40px;
-  max-width: 720px;
+  max-width: 100%;
   margin: 0 auto;
   box-shadow: 0 8px 40px rgba(0,0,0,0.08);
 }

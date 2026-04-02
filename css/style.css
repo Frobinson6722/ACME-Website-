@@ -104,7 +104,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 90px 24px 40px;
+  padding: 90px max(24px, calc((100% - 1140px) / 2)) 40px;
   position: relative;
   overflow: hidden;
 }

@@ -291,21 +291,24 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
   document.querySelector('.nav-links').classList.toggle('open');
 });
 
-// ── GOOGLE REVIEWS (Dynamic) ──
-// To enable live updates, add your Google Places API key below.
-// Get one free at: console.cloud.google.com → Enable "Places API" → Credentials → Create API Key
-// Replace 'YOUR_API_KEY' and uncomment the code block.
-//
-// const GOOGLE_API_KEY = 'YOUR_API_KEY';
-// const PLACE_ID = 'ChIJBRscXj6bVogRi4-Li4-PCU4'; // Kinetic Taekwondo Fort Mill
-// fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=rating,user_ratings_total&key=${GOOGLE_API_KEY}`)
-//   .then(r => r.json())
-//   .then(data => {
-//     if (data.result) {
-//       document.querySelector('.trust-rating').textContent = data.result.rating;
-//       document.getElementById('reviewCount').textContent = data.result.user_ratings_total;
-//     }
-//   });
+// ── GOOGLE REVIEWS (Dynamic via Maps JavaScript API) ──
+function initGoogleReviews() {
+  var service = new google.maps.places.PlacesService(document.createElement('div'));
+  service.getDetails({
+    placeId: 'ChIJBRscXj6bVogRi4-Li4-PCU4',
+    fields: ['rating', 'user_ratings_total']
+  }, function(place, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK && place) {
+      if (place.rating) {
+        document.querySelector('.trust-rating').textContent = place.rating;
+      }
+      if (place.user_ratings_total) {
+        document.getElementById('reviewCount').textContent = place.user_ratings_total;
+      }
+    }
+  });
+}
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiEa7VrhuFz5uggC6OcKrsGTD4Z_QqXrc&libraries=places&callback=initGoogleReviews" async defer></script>
 </body>
 </html>

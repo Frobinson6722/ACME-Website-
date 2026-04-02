@@ -173,7 +173,7 @@ nav {
   animation: fadeUp 0.7s 0.1s ease both;
 }
 
-.hero h1 span { color: var(--gold); }
+.hero h1 span { color: var(--red); }
 
 .hero-sub {
   margin-top: 14px;

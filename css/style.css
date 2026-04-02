@@ -730,10 +730,42 @@ footer a:hover { color: var(--white); }
   align-self: start;
 }
 
+.cal-sidebar-top {
+  margin-bottom: 20px;
+}
+
 .cal-sidebar-title {
   font-size: 1.4rem;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   line-height: 1.2;
+}
+
+.cal-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cal-filter {
+  background: var(--soft);
+  border: 2px solid transparent;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: var(--gray);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.cal-filter:hover { border-color: var(--green); color: var(--dark); }
+
+.cal-filter.active {
+  background: var(--green);
+  color: var(--white);
+  border-color: var(--green);
 }
 
 .cal-timeline {

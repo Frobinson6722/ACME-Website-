@@ -79,7 +79,23 @@
 
     <!-- SIDEBAR -->
     <div class="cal-sidebar">
-      <h3 class="cal-sidebar-title" id="sidebarTitle">Today's Events</h3>
+      <div class="cal-sidebar-top">
+        <h3 class="cal-sidebar-title" id="sidebarTitle">Today's Events</h3>
+        <div class="cal-filters">
+          <button class="cal-filter active" data-filter="all">All</button>
+          <button class="cal-filter" data-filter="testing" style="--fc:#C1121F;">🥋 Testing</button>
+          <button class="cal-filter" data-filter="tournament" style="--fc:#F4A823;">🏆 Tourneys</button>
+          <button class="cal-filter" data-filter="birthday" style="--fc:#1A7A2E;">🎂 Birthdays</button>
+          <button class="cal-filter" data-filter="special" style="--fc:#6366F1;">⭐ Special</button>
+        </div>
+        <div class="cal-filters" style="margin-top:6px;">
+          <button class="cal-filter cal-class-filter active" data-class="all">All Ages</button>
+          <button class="cal-filter cal-class-filter" data-class="dragons">🐉 Little Dragons</button>
+          <button class="cal-filter cal-class-filter" data-class="ninja">🥋 Ninja Kids</button>
+          <button class="cal-filter cal-class-filter" data-class="teens">⚡ Teens</button>
+          <button class="cal-filter cal-class-filter" data-class="adult">🏆 Adults</button>
+        </div>
+      </div>
       <div class="cal-timeline" id="calTimeline">
         <p class="cal-empty">Select a date to see events</p>
       </div>
@@ -127,82 +143,82 @@
 <script>
 // ── EVENT DATA ──
 const events = [
-  // ── APRIL 2026 ──
-  { date: '2026-04-01', title: 'Ninja Kids Class', time: '4:30 PM', type: 'special', icon: '⭐', desc: 'Regular Ninja Kids class — ages 6–12. Focus on forms and self-defense basics.' },
-  { date: '2026-04-01', title: 'Adult TKD & Krav Maga', time: '7:00 PM', type: 'special', icon: '⭐', desc: 'Evening adult class. Striking combos and partner drills.' },
-  { date: '2026-04-02', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', desc: 'Morning class for ages 3–5. Motor skills, listening, and fun.' },
-  { date: '2026-04-02', title: 'Teens Sparring Practice', time: '5:30 PM', type: 'tournament', icon: '🏆', desc: 'Tournament prep sparring for teens. Gear required.' },
-  { date: '2026-04-03', title: 'Belt Test Prep — White to Yellow', time: '4:00 PM', type: 'testing', icon: '🥋', desc: 'Extra practice session for students testing for yellow belt.' },
-  { date: '2026-04-04', title: 'Open Mat & Free Practice', time: '11:00 AM', type: 'special', icon: '⭐', desc: 'Open practice for all students. Work on forms, sparring, or breaking.' },
-  { date: '2026-04-04', title: 'TKD Birthday Party — Emma', time: '2:00 PM', type: 'birthday', icon: '🎂', desc: 'Private birthday party for Emma, age 7. Martial arts games and cake!' },
-  { date: '2026-04-05', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'White and yellow belt testing. Arrive 15 min early in full uniform.' },
-  { date: '2026-04-05', title: 'Family Self-Defense Workshop', time: '1:00 PM', type: 'special', icon: '⭐', desc: 'Parents and kids learn self-defense together. Free for members.' },
-  { date: '2026-04-07', title: 'Ninja Kids Class', time: '4:30 PM', type: 'special', icon: '⭐', desc: 'Regular class — working on poomsae forms this week.' },
-  { date: '2026-04-07', title: 'Board Breaking Clinic', time: '6:00 PM', type: 'testing', icon: '🥋', desc: 'Practice breaking techniques for upcoming belt test.' },
-  { date: '2026-04-08', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', desc: 'Focus on balance and coordination drills.' },
-  { date: '2026-04-09', title: 'Tournament Strategy Session', time: '5:00 PM', type: 'tournament', icon: '🏆', desc: 'Coach-led session on sparring strategy and scoring.' },
-  { date: '2026-04-10', title: 'Teen Leadership Training', time: '5:30 PM', type: 'special', icon: '⭐', desc: 'Teens learn to assist with younger students. Leadership belt credit.' },
-  { date: '2026-04-11', title: 'TKD Birthday Party — Jake', time: '3:00 PM', type: 'birthday', icon: '🎂', desc: 'Jake turns 10! Ninja obstacle course and sparring games.' },
-  { date: '2026-04-11', title: 'Adult Krav Maga Intro', time: '6:00 PM', type: 'special', icon: '⭐', desc: 'Free trial class for adults interested in Krav Maga.' },
-  { date: '2026-04-12', title: 'Parent Watch Day', time: '11:00 AM', type: 'special', icon: '⭐', desc: 'Parents invited to watch and participate in class.' },
-  { date: '2026-04-12', title: 'Tournament Prep — Forms', time: '1:00 PM', type: 'tournament', icon: '🏆', desc: 'Practice competition forms with judges\' scoring feedback.' },
-  { date: '2026-04-13', title: 'Ninja Kids Advanced', time: '4:30 PM', type: 'special', icon: '⭐', desc: 'Advanced class for green belts and above. Spinning kicks focus.' },
-  { date: '2026-04-14', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', desc: 'Fun Tuesday class! Animal movement games and basic blocks.' },
-  { date: '2026-04-15', title: 'Belt Test Final Prep', time: '4:00 PM', type: 'testing', icon: '🥋', desc: 'Last chance to practice before Saturday\'s belt test. All ranks.' },
-  { date: '2026-04-15', title: 'Adult Sparring Night', time: '7:30 PM', type: 'tournament', icon: '🏆', desc: 'Competitive sparring rounds for adults. Full gear required.' },
-  { date: '2026-04-16', title: 'Teens Class', time: '5:30 PM', type: 'special', icon: '⭐', desc: 'Regular teens class — conditioning and self-defense combos.' },
-  { date: '2026-04-17', title: 'Open Mat & Practice', time: '11:00 AM', type: 'special', icon: '⭐', desc: 'Open gym for all students to practice freely.' },
-  { date: '2026-04-18', title: 'TKD Birthday Party — Mia', time: '1:00 PM', type: 'birthday', icon: '🎂', desc: 'Mia\'s 6th birthday! Little Dragons themed party with board breaking.' },
-  { date: '2026-04-18', title: 'Belt Test Setup & Rehearsal', time: '5:00 PM', type: 'testing', icon: '🥋', desc: 'Volunteers help set up. Testers do final walk-through.' },
-  { date: '2026-04-19', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Bi-weekly belt test day. All eligible students. Arrive 15 min early in full uniform.' },
-  { date: '2026-04-19', title: 'Belt Ceremony & Photos', time: '12:30 PM', type: 'testing', icon: '🥋', desc: 'Celebration and photos for all new belt recipients. Refreshments provided.' },
-  { date: '2026-04-19', title: 'Post-Test Pizza Party', time: '1:30 PM', type: 'special', icon: '⭐', desc: 'Pizza and fun for all students who tested today!' },
-  { date: '2026-04-20', title: 'Ninja Kids Class', time: '4:30 PM', type: 'special', icon: '⭐', desc: 'New curriculum starts for newly promoted students.' },
-  { date: '2026-04-21', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', desc: 'Tuesday morning dragons! Obstacle course day.' },
-  { date: '2026-04-22', title: 'Competition Team Practice', time: '5:00 PM', type: 'tournament', icon: '🏆', desc: 'Invitation-only competition team. Preparing for May invitational.' },
-  { date: '2026-04-23', title: 'Teens Self-Defense Focus', time: '5:30 PM', type: 'special', icon: '⭐', desc: 'Real-world self-defense scenarios for teens.' },
-  { date: '2026-04-24', title: 'Family Movie Night at Dojo', time: '6:30 PM', type: 'special', icon: '⭐', desc: 'Bring blankets and snacks! Martial arts movie night for families.' },
-  { date: '2026-04-25', title: 'TKD Birthday Party — Liam', time: '2:00 PM', type: 'birthday', icon: '🎂', desc: 'Liam turns 8! Full ninja party with games, training, and cake.' },
-  { date: '2026-04-25', title: 'Adult Krav Maga Workshop', time: '4:00 PM', type: 'special', icon: '⭐', desc: 'Ground defense and escape techniques. All levels.' },
-  { date: '2026-04-26', title: 'TKD Birthday Party — Sofia', time: '2:00 PM', type: 'birthday', icon: '🎂', desc: 'Sofia\'s 9th birthday! Board breaking and team sparring games.' },
-  { date: '2026-04-27', title: 'Ninja Kids Class', time: '4:30 PM', type: 'special', icon: '⭐', desc: 'Monday class — kicking combinations and partner drills.' },
-  { date: '2026-04-28', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', desc: 'Coordination day — jumping, rolling, and tumbling basics.' },
-  { date: '2026-04-29', title: 'Tournament Registration Deadline', time: 'All Day', type: 'tournament', icon: '🏆', desc: 'Last day to register for the May 10 Fort Mill Invitational!' },
-  { date: '2026-04-30', title: 'Teens Sparring Ladder', time: '5:30 PM', type: 'tournament', icon: '🏆', desc: 'Competitive sparring ladder — climb the ranks before tournament.' },
+  // ── APRIL 2026 ── (ages: dragons/ninja/teens/adult/all)
+  { date: '2026-04-01', title: 'Ninja Kids Class', time: '4:30 PM', type: 'special', icon: '⭐', ages: 'ninja', desc: 'Regular Ninja Kids class — ages 6–12. Focus on forms and self-defense basics.' },
+  { date: '2026-04-01', title: 'Adult TKD & Krav Maga', time: '7:00 PM', type: 'special', icon: '⭐', ages: 'adult', desc: 'Evening adult class. Striking combos and partner drills.' },
+  { date: '2026-04-02', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', ages: 'dragons', desc: 'Morning class for ages 3–5. Motor skills, listening, and fun.' },
+  { date: '2026-04-02', title: 'Teens Sparring Practice', time: '5:30 PM', type: 'tournament', icon: '🏆', ages: 'teens', desc: 'Tournament prep sparring for teens. Gear required.' },
+  { date: '2026-04-03', title: 'Belt Test Prep — White to Yellow', time: '4:00 PM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Extra practice session for students testing for yellow belt.' },
+  { date: '2026-04-04', title: 'Open Mat & Free Practice', time: '11:00 AM', type: 'special', icon: '⭐', ages: 'all', desc: 'Open practice for all students. Work on forms, sparring, or breaking.' },
+  { date: '2026-04-04', title: 'TKD Birthday Party — Emma', time: '2:00 PM', type: 'birthday', icon: '🎂', ages: 'ninja', desc: 'Private birthday party for Emma, age 7. Martial arts games and cake!' },
+  { date: '2026-04-05', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'White and yellow belt testing. Arrive 15 min early in full uniform.' },
+  { date: '2026-04-05', title: 'Family Self-Defense Workshop', time: '1:00 PM', type: 'special', icon: '⭐', ages: 'all', desc: 'Parents and kids learn self-defense together. Free for members.' },
+  { date: '2026-04-07', title: 'Ninja Kids Class', time: '4:30 PM', type: 'special', icon: '⭐', ages: 'ninja', desc: 'Regular class — working on poomsae forms this week.' },
+  { date: '2026-04-07', title: 'Board Breaking Clinic', time: '6:00 PM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Practice breaking techniques for upcoming belt test.' },
+  { date: '2026-04-08', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', ages: 'dragons', desc: 'Focus on balance and coordination drills.' },
+  { date: '2026-04-09', title: 'Tournament Strategy Session', time: '5:00 PM', type: 'tournament', icon: '🏆', ages: 'all', desc: 'Coach-led session on sparring strategy and scoring.' },
+  { date: '2026-04-10', title: 'Teen Leadership Training', time: '5:30 PM', type: 'special', icon: '⭐', ages: 'teens', desc: 'Teens learn to assist with younger students. Leadership belt credit.' },
+  { date: '2026-04-11', title: 'TKD Birthday Party — Jake', time: '3:00 PM', type: 'birthday', icon: '🎂', ages: 'ninja', desc: 'Jake turns 10! Ninja obstacle course and sparring games.' },
+  { date: '2026-04-11', title: 'Adult Krav Maga Intro', time: '6:00 PM', type: 'special', icon: '⭐', ages: 'adult', desc: 'Free trial class for adults interested in Krav Maga.' },
+  { date: '2026-04-12', title: 'Parent Watch Day', time: '11:00 AM', type: 'special', icon: '⭐', ages: 'all', desc: 'Parents invited to watch and participate in class.' },
+  { date: '2026-04-12', title: 'Tournament Prep — Forms', time: '1:00 PM', type: 'tournament', icon: '🏆', ages: 'all', desc: 'Practice competition forms with judges\' scoring feedback.' },
+  { date: '2026-04-13', title: 'Ninja Kids Advanced', time: '4:30 PM', type: 'special', icon: '⭐', ages: 'ninja', desc: 'Advanced class for green belts and above. Spinning kicks focus.' },
+  { date: '2026-04-14', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', ages: 'dragons', desc: 'Fun Tuesday class! Animal movement games and basic blocks.' },
+  { date: '2026-04-15', title: 'Belt Test Final Prep', time: '4:00 PM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Last chance to practice before Saturday\'s belt test. All ranks.' },
+  { date: '2026-04-15', title: 'Adult Sparring Night', time: '7:30 PM', type: 'tournament', icon: '🏆', ages: 'adult', desc: 'Competitive sparring rounds for adults. Full gear required.' },
+  { date: '2026-04-16', title: 'Teens Class', time: '5:30 PM', type: 'special', icon: '⭐', ages: 'teens', desc: 'Regular teens class — conditioning and self-defense combos.' },
+  { date: '2026-04-17', title: 'Open Mat & Practice', time: '11:00 AM', type: 'special', icon: '⭐', ages: 'all', desc: 'Open gym for all students to practice freely.' },
+  { date: '2026-04-18', title: 'TKD Birthday Party — Mia', time: '1:00 PM', type: 'birthday', icon: '🎂', ages: 'dragons', desc: 'Mia\'s 6th birthday! Little Dragons themed party with board breaking.' },
+  { date: '2026-04-18', title: 'Belt Test Setup & Rehearsal', time: '5:00 PM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Volunteers help set up. Testers do final walk-through.' },
+  { date: '2026-04-19', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Bi-weekly belt test day. All eligible students. Arrive 15 min early in full uniform.' },
+  { date: '2026-04-19', title: 'Belt Ceremony & Photos', time: '12:30 PM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Celebration and photos for all new belt recipients. Refreshments provided.' },
+  { date: '2026-04-19', title: 'Post-Test Pizza Party', time: '1:30 PM', type: 'special', icon: '⭐', ages: 'all', desc: 'Pizza and fun for all students who tested today!' },
+  { date: '2026-04-20', title: 'Ninja Kids Class', time: '4:30 PM', type: 'special', icon: '⭐', ages: 'ninja', desc: 'New curriculum starts for newly promoted students.' },
+  { date: '2026-04-21', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', ages: 'dragons', desc: 'Tuesday morning dragons! Obstacle course day.' },
+  { date: '2026-04-22', title: 'Competition Team Practice', time: '5:00 PM', type: 'tournament', icon: '🏆', ages: 'all', desc: 'Invitation-only competition team. Preparing for May invitational.' },
+  { date: '2026-04-23', title: 'Teens Self-Defense Focus', time: '5:30 PM', type: 'special', icon: '⭐', ages: 'teens', desc: 'Real-world self-defense scenarios for teens.' },
+  { date: '2026-04-24', title: 'Family Movie Night at Dojo', time: '6:30 PM', type: 'special', icon: '⭐', ages: 'all', desc: 'Bring blankets and snacks! Martial arts movie night for families.' },
+  { date: '2026-04-25', title: 'TKD Birthday Party — Liam', time: '2:00 PM', type: 'birthday', icon: '🎂', ages: 'ninja', desc: 'Liam turns 8! Full ninja party with games, training, and cake.' },
+  { date: '2026-04-25', title: 'Adult Krav Maga Workshop', time: '4:00 PM', type: 'special', icon: '⭐', ages: 'adult', desc: 'Ground defense and escape techniques. All levels.' },
+  { date: '2026-04-26', title: 'TKD Birthday Party — Sofia', time: '2:00 PM', type: 'birthday', icon: '🎂', ages: 'ninja', desc: 'Sofia\'s 9th birthday! Board breaking and team sparring games.' },
+  { date: '2026-04-27', title: 'Ninja Kids Class', time: '4:30 PM', type: 'special', icon: '⭐', ages: 'ninja', desc: 'Monday class — kicking combinations and partner drills.' },
+  { date: '2026-04-28', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', ages: 'dragons', desc: 'Coordination day — jumping, rolling, and tumbling basics.' },
+  { date: '2026-04-29', title: 'Tournament Registration Deadline', time: 'All Day', type: 'tournament', icon: '🏆', ages: 'all', desc: 'Last day to register for the May 10 Fort Mill Invitational!' },
+  { date: '2026-04-30', title: 'Teens Sparring Ladder', time: '5:30 PM', type: 'tournament', icon: '🏆', ages: 'teens', desc: 'Competitive sparring ladder — climb the ranks before tournament.' },
 
   // ── MAY 2026 ──
-  { date: '2026-05-01', title: 'Ninja Kids Class', time: '4:30 PM', type: 'special', icon: '⭐', desc: 'Regular Friday class — forms review and games.' },
-  { date: '2026-05-02', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'White and yellow belt testing. Bi-weekly schedule.' },
-  { date: '2026-05-03', title: 'Tournament Prep Workshop', time: '9:00 AM', type: 'tournament', icon: '🏆', desc: 'Get ready for the Fort Mill Invitational. Forms & sparring drills.' },
-  { date: '2026-05-09', title: 'Tournament Setup Day', time: '4:00 PM', type: 'tournament', icon: '🏆', desc: 'Volunteers help set up the venue. Pizza provided!' },
-  { date: '2026-05-10', title: 'Fort Mill Invitational', time: '9:00 AM', type: 'tournament', icon: '🏆', desc: 'Annual tournament — forms, sparring, board breaking. All levels welcome.' },
-  { date: '2026-05-10', title: 'Awards Ceremony', time: '3:00 PM', type: 'tournament', icon: '🏆', desc: 'Medals and trophies for all competitors. Family celebration!' },
-  { date: '2026-05-16', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Bi-weekly belt test. All eligible students welcome.' },
-  { date: '2026-05-17', title: 'TKD Birthday Party', time: '1:00 PM', type: 'birthday', icon: '🎂', desc: 'Private birthday party with martial arts games and obstacle course.' },
-  { date: '2026-05-24', title: 'Memorial Day — No Classes', time: 'All Day', type: 'special', icon: '⭐', desc: 'Dojo closed for Memorial Day. See you Tuesday!' },
-  { date: '2026-05-30', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Bi-weekly belt testing for white through green belts.' },
-  { date: '2026-05-30', title: 'TKD Birthday Party', time: '2:00 PM', type: 'birthday', icon: '🎂', desc: 'End of May birthday bash at the dojo!' },
+  { date: '2026-05-01', title: 'Ninja Kids Class', time: '4:30 PM', type: 'special', icon: '⭐', ages: 'ninja', desc: 'Regular Friday class — forms review and games.' },
+  { date: '2026-05-02', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'White and yellow belt testing. Bi-weekly schedule.' },
+  { date: '2026-05-03', title: 'Tournament Prep Workshop', time: '9:00 AM', type: 'tournament', icon: '🏆', ages: 'all', desc: 'Get ready for the Fort Mill Invitational. Forms & sparring drills.' },
+  { date: '2026-05-09', title: 'Tournament Setup Day', time: '4:00 PM', type: 'tournament', icon: '🏆', ages: 'all', desc: 'Volunteers help set up the venue. Pizza provided!' },
+  { date: '2026-05-10', title: 'Fort Mill Invitational', time: '9:00 AM', type: 'tournament', icon: '🏆', ages: 'all', desc: 'Annual tournament — forms, sparring, board breaking. All levels welcome.' },
+  { date: '2026-05-10', title: 'Awards Ceremony', time: '3:00 PM', type: 'tournament', icon: '🏆', ages: 'all', desc: 'Medals and trophies for all competitors. Family celebration!' },
+  { date: '2026-05-16', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Bi-weekly belt test. All eligible students welcome.' },
+  { date: '2026-05-17', title: 'TKD Birthday Party', time: '1:00 PM', type: 'birthday', icon: '🎂', ages: 'all', desc: 'Private birthday party with martial arts games and obstacle course.' },
+  { date: '2026-05-24', title: 'Memorial Day — No Classes', time: 'All Day', type: 'special', icon: '⭐', ages: 'all', desc: 'Dojo closed for Memorial Day. See you Tuesday!' },
+  { date: '2026-05-30', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Bi-weekly belt testing for white through green belts.' },
+  { date: '2026-05-30', title: 'TKD Birthday Party', time: '2:00 PM', type: 'birthday', icon: '🎂', ages: 'all', desc: 'End of May birthday bash at the dojo!' },
 
   // ── JUNE 2026 ──
-  { date: '2026-06-06', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Bi-weekly belt test. All eligible students.' },
-  { date: '2026-06-14', title: 'TKD Birthday Party', time: '3:00 PM', type: 'birthday', icon: '🎂', desc: 'Weekend birthday bash at the dojo.' },
-  { date: '2026-06-16', title: 'Summer Camp Day 1', time: '9:00 AM', type: 'special', icon: '🏕️', desc: 'Summer camp kicks off! Ages 5–14. 9 AM – 3 PM.' },
-  { date: '2026-06-17', title: 'Summer Camp Day 2', time: '9:00 AM', type: 'special', icon: '🏕️', desc: 'Camp continues — leadership and team games.' },
-  { date: '2026-06-18', title: 'Summer Camp Day 3', time: '9:00 AM', type: 'special', icon: '🏕️', desc: 'Mid-week camp day — board breaking workshop.' },
-  { date: '2026-06-19', title: 'Summer Camp Day 4', time: '9:00 AM', type: 'special', icon: '🏕️', desc: 'Camp day 4 — sparring games and obstacle course.' },
-  { date: '2026-06-20', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Bi-weekly testing. White through green belts.' },
-  { date: '2026-06-20', title: 'Summer Camp Day 5', time: '9:00 AM', type: 'special', icon: '🏕️', desc: 'Camp finale! Demo for parents at 2 PM.' },
+  { date: '2026-06-06', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Bi-weekly belt test. All eligible students.' },
+  { date: '2026-06-14', title: 'TKD Birthday Party', time: '3:00 PM', type: 'birthday', icon: '🎂', ages: 'all', desc: 'Weekend birthday bash at the dojo.' },
+  { date: '2026-06-16', title: 'Summer Camp Day 1', time: '9:00 AM', type: 'special', icon: '🏕️', ages: 'all', desc: 'Summer camp kicks off! Ages 5–14. 9 AM – 3 PM.' },
+  { date: '2026-06-17', title: 'Summer Camp Day 2', time: '9:00 AM', type: 'special', icon: '🏕️', ages: 'all', desc: 'Camp continues — leadership and team games.' },
+  { date: '2026-06-18', title: 'Summer Camp Day 3', time: '9:00 AM', type: 'special', icon: '🏕️', ages: 'all', desc: 'Mid-week camp day — board breaking workshop.' },
+  { date: '2026-06-19', title: 'Summer Camp Day 4', time: '9:00 AM', type: 'special', icon: '🏕️', ages: 'all', desc: 'Camp day 4 — sparring games and obstacle course.' },
+  { date: '2026-06-20', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Bi-weekly testing. White through green belts.' },
+  { date: '2026-06-20', title: 'Summer Camp Day 5', time: '9:00 AM', type: 'special', icon: '🏕️', ages: 'all', desc: 'Camp finale! Demo for parents at 2 PM.' },
 
   // ── JULY–AUG 2026 ──
-  { date: '2026-07-04', title: 'Independence Day — No Classes', time: 'All Day', type: 'special', icon: '⭐', desc: 'Dojo closed. Happy 4th of July!' },
-  { date: '2026-07-11', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Bi-weekly belt test. All eligible students.' },
-  { date: '2026-07-18', title: 'Mid-Year Tournament', time: '10:00 AM', type: 'tournament', icon: '🏆', desc: 'Regional TKD tournament. Register by July 10.' },
-  { date: '2026-07-25', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Bi-weekly testing for white through green belts.' },
-  { date: '2026-08-01', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Bi-weekly belt test for all eligible students.' },
-  { date: '2026-08-15', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Bi-weekly testing. Back to school energy!' },
-  { date: '2026-08-15', title: 'Back to School Bash', time: '1:00 PM', type: 'special', icon: '⭐', desc: 'Fun event to kick off the school year. Games and prizes!' },
-  { date: '2026-08-22', title: 'TKD Birthday Party', time: '2:00 PM', type: 'birthday', icon: '🎂', desc: 'Weekend birthday celebration at the dojo.' },
-  { date: '2026-08-29', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'End of summer belt test. All eligible students.' },
+  { date: '2026-07-04', title: 'Independence Day — No Classes', time: 'All Day', type: 'special', icon: '⭐', ages: 'all', desc: 'Dojo closed. Happy 4th of July!' },
+  { date: '2026-07-11', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Bi-weekly belt test. All eligible students.' },
+  { date: '2026-07-18', title: 'Mid-Year Tournament', time: '10:00 AM', type: 'tournament', icon: '🏆', ages: 'all', desc: 'Regional TKD tournament. Register by July 10.' },
+  { date: '2026-07-25', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Bi-weekly testing for white through green belts.' },
+  { date: '2026-08-01', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Bi-weekly belt test for all eligible students.' },
+  { date: '2026-08-15', title: 'Belt Testing — Beginners', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'Bi-weekly testing. Back to school energy!' },
+  { date: '2026-08-15', title: 'Back to School Bash', time: '1:00 PM', type: 'special', icon: '⭐', ages: 'all', desc: 'Fun event to kick off the school year. Games and prizes!' },
+  { date: '2026-08-22', title: 'TKD Birthday Party', time: '2:00 PM', type: 'birthday', icon: '🎂', ages: 'all', desc: 'Weekend birthday celebration at the dojo.' },
+  { date: '2026-08-29', title: 'Belt Testing — All Ranks', time: '10:00 AM', type: 'testing', icon: '🥋', ages: 'all', desc: 'End of summer belt test. All eligible students.' },
 ];
 
 const typeColors = {
@@ -225,6 +241,38 @@ const typeIcons = {
   birthday: '🎂',
   special: '⭐'
 };
+
+// ── FILTER STATE ──
+let activeTypeFilter = 'all';
+let activeClassFilter = 'all';
+
+function filterEvents(evList) {
+  return evList.filter(e => {
+    const typeMatch = activeTypeFilter === 'all' || e.type === activeTypeFilter;
+    const classMatch = activeClassFilter === 'all' || e.ages === activeClassFilter || e.ages === 'all';
+    return typeMatch && classMatch;
+  });
+}
+
+// Type filter buttons
+document.querySelectorAll('.cal-filter:not(.cal-class-filter)').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cal-filter:not(.cal-class-filter)').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTypeFilter = btn.dataset.filter;
+    showAllMonthEvents();
+  });
+});
+
+// Class/age filter buttons
+document.querySelectorAll('.cal-class-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cal-class-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeClassFilter = btn.dataset.class;
+    showAllMonthEvents();
+  });
+});
 
 // ── CALENDAR LOGIC ──
 let currentDate = new Date(2026, 3, 1); // April 2026
@@ -270,7 +318,7 @@ function showAllMonthEvents() {
   const month = currentDate.getMonth();
   const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   sidebarTitle.textContent = 'All Events — ' + monthNames[month];
-  const monthEvents = getMonthEvents(year, month);
+  const monthEvents = filterEvents(getMonthEvents(year, month));
   renderEventsList(monthEvents);
 }
 

@@ -110,7 +110,7 @@ nav {
 }
 
 .hero--compact {
-  min-height: 35vh;
+  min-height: 100vh;
   padding: 100px max(24px, calc((100% - 1140px) / 2)) 40px;
 }
 

@@ -120,18 +120,17 @@ nav {
 
 .hero-bg-img {
   position: absolute;
-  right: 0;
+  right: max(0px, calc((100% - 1140px) / 2));
   bottom: 0;
   height: 85%;
   width: auto;
-  max-width: 45%;
+  max-width: 480px;
   object-fit: contain;
   object-position: right bottom;
   pointer-events: none;
   user-select: none;
   opacity: 0.35;
   filter: saturate(0.8);
-  transition: opacity 0.3s;
 }
 
 @media (max-width: 1200px) {

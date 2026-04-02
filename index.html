@@ -10,21 +10,9 @@
 section,.ribbon,.info-bar,.cta-band{position:relative}
 section::after,.ribbon::after,.info-bar::after,.cta-band::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:3px;background:inherit;z-index:10;pointer-events:none}
 .ribbon{overflow-x:hidden!important;overflow-y:visible!important}
-#page-loader{position:fixed;inset:0;z-index:9999;background:#0D0D0D;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.5s ease,visibility 0.5s ease}
-#page-loader.loaded{opacity:0;visibility:hidden}
-.loader-logo{width:400px;height:auto;margin-bottom:24px;animation:loaderPulse 1.6s ease-in-out infinite}
-.loader-bar{width:120px;height:3px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden}
-.loader-bar-inner{width:40%;height:100%;background:#C1121F;border-radius:3px;animation:loaderSlide 1s ease-in-out infinite}
-@keyframes loaderPulse{0%,100%{opacity:0.6}50%{opacity:1}}
-@keyframes loaderSlide{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
 </style>
 </head>
 <body>
-
-<div id="page-loader">
-  <img src="img/logo-transparent-hd.webp" alt="" class="loader-logo">
-  <div class="loader-bar"><div class="loader-bar-inner"></div></div>
-</div>
 
 <!-- NAV -->
 <nav>
@@ -285,32 +273,5 @@ function initGoogleReviews() {
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiEa7VrhuFz5uggC6OcKrsGTD4Z_QqXrc&libraries=places&callback=initGoogleReviews" async defer></script>
-<script>
-(function() {
-  var loader = document.getElementById('page-loader');
-  if (!loader) return;
-  var MIN_DISPLAY = 3500;
-  var start = Date.now();
-  var ready = false;
-  var heroImg = document.querySelector('.hero-bg-img');
-  function hideLoader() {
-    if (ready) return;
-    ready = true;
-    var elapsed = Date.now() - start;
-    var delay = Math.max(0, MIN_DISPLAY - elapsed);
-    setTimeout(function() {
-      loader.classList.add('loaded');
-      setTimeout(function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 600);
-    }, delay);
-  }
-  if (heroImg && heroImg.complete && heroImg.naturalHeight > 0) { hideLoader(); return; }
-  if (heroImg) {
-    heroImg.addEventListener('load', hideLoader);
-    heroImg.addEventListener('error', hideLoader);
-  }
-  window.addEventListener('load', hideLoader);
-  setTimeout(hideLoader, 8000);
-})();
-</script>
 </body>
 </html>

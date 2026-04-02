@@ -129,8 +129,6 @@ nav {
   object-fit: contain;
   pointer-events: none;
   user-select: none;
-  opacity: 0.8;
-  filter: saturate(0.8);
 }
 
 @media (max-width: 1400px) {
@@ -631,8 +629,8 @@ section {
 .signup-form {
   background: var(--soft);
   border-radius: var(--radius);
-  padding: 40px 28px;
-  max-width: 480px;
+  padding: 48px 40px;
+  max-width: 100%;
   margin: 0 auto;
   box-shadow: 0 8px 40px rgba(0,0,0,0.08);
 }

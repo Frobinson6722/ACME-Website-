@@ -344,6 +344,112 @@ section { padding: 72px 24px; }
 .program-link::after { content: '→'; transition: transform 0.2s; }
 .program-card:hover .program-link::after { transform: translateX(4px); }
 
+/* ── ABOUT US ── */
+.about { background: var(--white); }
+
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+}
+
+.about-card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  align-items: start;
+  background: var(--soft);
+  border-radius: var(--radius);
+  padding: 40px;
+}
+
+.about-card--reverse {
+  grid-template-columns: 1fr 320px;
+}
+
+.about-card--reverse .about-img { order: 2; }
+.about-card--reverse .about-info { order: 1; }
+
+.about-img {
+  width: 100%;
+  text-align: center;
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.about-badge {
+  display: inline-block;
+  background: var(--green);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+.about-info h3 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.about-rank {
+  font-size: 0.85rem;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(26,122,46,0.15);
+}
+
+.about-info p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.about-motto {
+  text-align: center;
+  margin-top: 48px;
+  padding: 32px 24px;
+  background: var(--green);
+  border-radius: var(--radius);
+}
+
+.about-motto p {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.about-motto span {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .about-card,
+  .about-card--reverse {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+  }
+  .about-card--reverse .about-img { order: 0; }
+  .about-card--reverse .about-info { order: 0; }
+  .about-img img { max-width: 240px; }
+}
+
 /* ── WHY US ── */
 .why { background: var(--dark); color: var(--white); }
 

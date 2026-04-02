@@ -5,8 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog | Kinetic Taekwondo · Fort Mill, SC</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=13">
-<style>body{display:flex;flex-direction:column}section,.ribbon,.info-bar{position:relative;margin-bottom:-2px}</style>
+<link rel="stylesheet" href="css/style.css?v=14">
+<style>
+section,.ribbon,.info-bar,.cta-band{position:relative}
+section::after,.ribbon::after,.info-bar::after,.cta-band::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:3px;background:inherit;z-index:10;pointer-events:none}
+.ribbon{overflow-x:hidden!important;overflow-y:visible!important}
+</style>
 </head>
 <body>
 

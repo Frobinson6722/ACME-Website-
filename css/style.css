@@ -7,6 +7,8 @@
   --gold: #F4A823;
   --soft: #F0F5F1;
   --gray: #6B6B6B;
+  --border-light: #eee;
+  --purple: #6366F1;
   --radius: 16px;
 }
 
@@ -71,24 +73,6 @@ nav {
 }
 
 .nav-links a:hover { color: var(--white); }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 28px;
-  margin-left: auto;
-}
-
-.nav-links li { white-space: nowrap; }
-
-.nav-links a {
-  color: rgba(255,255,255,0.75);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  transition: color 0.2s;
-}
 
 .nav-links a:hover { color: var(--white); }
 
@@ -223,6 +207,13 @@ nav {
 }
 
 .btn-primary:hover { background: var(--green-dark); transform: scale(1.03); }
+
+.btn-primary--inverted {
+  background: var(--white);
+  color: var(--green);
+}
+
+.btn-primary--inverted:hover { background: #e8e8e8; }
 
 .btn-ghost {
   background: transparent;
@@ -715,7 +706,7 @@ section {
 
 /* ── FOOTER ── */
 footer {
-  background: #080808;
+  background: var(--dark);
   padding: 28px max(24px, calc((100% - 1140px) / 2));
   text-align: center;
   color: rgba(255,255,255,0.3);
@@ -868,7 +859,7 @@ footer a:hover { color: var(--white); }
   font-weight: 600;
   margin-bottom: 28px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .blog-modal-body h3 {
@@ -883,7 +874,7 @@ footer a:hover { color: var(--white); }
 
 .blog-modal-body p {
   font-size: 1rem;
-  color: #333;
+  color: var(--dark);
   line-height: 1.85;
   margin-bottom: 20px;
 }
@@ -955,7 +946,7 @@ footer a:hover { color: var(--white); }
 }
 
 .wk-card {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-light);
   padding: 10px 8px;
   text-align: center;
   display: flex;
@@ -999,8 +990,8 @@ footer a:hover { color: var(--white); }
   gap: 16px;
   margin: 0;
   padding: 10px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
   margin-bottom: 12px;
 }
 
@@ -1321,7 +1312,7 @@ footer a:hover { color: var(--white); }
     right: 0;
     bottom: 0;
     z-index: 200;
-    background: #0d0d0d;
+    background: var(--dark);
     padding: 100px 32px 40px;
     gap: 32px;
     align-items: flex-end;

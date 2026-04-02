@@ -1275,7 +1275,7 @@ footer a:hover { color: var(--white); }
 
 /* ── MOBILE ── */
 @media (max-width: 600px) {
-  nav { padding: 14px 18px; flex-wrap: wrap; }
+  nav { padding: 14px 18px; flex-wrap: wrap; backdrop-filter: none; }
   .nav-logo { font-size: 1.3rem; }
   .nav-links {
     display: none;

@@ -340,7 +340,7 @@ section {
 }
 
 /* ── PROGRAMS ── */
-.programs { background: var(--soft); }
+.programs { background: var(--cream); }
 
 .programs-grid {
   display: grid;
@@ -584,7 +584,7 @@ section {
 }
 
 .review-card {
-  background: var(--soft);
+  background: var(--white);
   border-radius: var(--radius);
   padding: 28px;
 }
@@ -630,7 +630,7 @@ section {
 
 /* ── FORM ── */
 .signup-form {
-  background: var(--soft);
+  background: var(--white);
   border-radius: var(--radius);
   padding: 48px 40px;
   max-width: 720px;
@@ -695,7 +695,7 @@ section {
 
 /* ── INFO BAR ── */
 .info-bar {
-  background: var(--soft);
+  background: var(--cream);
   padding: 40px max(24px, calc((100% - 1140px) / 2));
   display: flex;
   flex-wrap: wrap;
@@ -736,7 +736,7 @@ footer a:hover { color: var(--dark); }
 
 .blog-header .section-title { color: var(--dark); }
 
-.blog-posts { background: var(--soft); }
+.blog-posts { background: var(--cream); }
 
 .blog-grid {
   display: grid;

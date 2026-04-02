@@ -40,11 +40,20 @@ nav {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.6rem;
   color: var(--white);
   letter-spacing: 0.05em;
   white-space: nowrap;
+  text-decoration: none;
+}
+
+.nav-logo-img {
+  height: 42px;
+  width: auto;
 }
 
 .nav-logo span { color: var(--green); }

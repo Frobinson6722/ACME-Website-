@@ -110,7 +110,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 90px max(24px, calc((100% - 1140px) / 2)) 40px;
+  padding: 90px max(24px, calc((100% - 1140px) / 2)) 80px;
   position: relative;
   overflow: hidden;
 }
@@ -300,6 +300,12 @@ nav {
 }
 
 .ribbon-item::before { content: '◆'; font-size: 0.5rem; opacity: 0.6; }
+
+.ribbon--hero {
+  position: relative;
+  z-index: 2;
+  margin-top: -48px;
+}
 
 @keyframes scroll {
   from { transform: translateX(0); }

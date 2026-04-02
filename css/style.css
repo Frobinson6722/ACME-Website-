@@ -277,7 +277,7 @@ nav {
 
 /* ── RIBBON ── */
 .ribbon {
-  background: var(--green);
+  background: var(--red);
   padding: 14px 0;
   overflow: hidden;
   white-space: nowrap;

@@ -189,21 +189,24 @@
 
 <!-- SIGNUP FORM -->
 <section id="signup" style="background:var(--soft);">
-  <div class="signup-form">
+  <form class="signup-form" action="https://formsubmit.co/frobinson6722@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New Free Class Request — Kinetic Taekwondo">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://acme-playground-dev-30d115a7.koyeb.app/">
     <h3>Get Your Free Class</h3>
     <p>Fill this out and we'll reach out within 24 hours to schedule your visit.</p>
 
     <div class="form-group">
-      <input type="text" placeholder="Parent's Name" />
+      <input type="text" name="name" placeholder="Parent's Name" required />
     </div>
     <div class="form-group">
-      <input type="tel" placeholder="Phone Number" />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
     </div>
     <div class="form-group">
-      <input type="email" placeholder="Email Address" />
+      <input type="email" name="email" placeholder="Email Address" required />
     </div>
     <div class="form-group">
-      <select>
+      <select name="program" required>
         <option value="" disabled selected>Child's Age / Program Interest</option>
         <option>Ages 3–5 (Little Dragons)</option>
         <option>Ages 6–12 (Ninja Kids)</option>
@@ -212,9 +215,9 @@
         <option>Multiple kids / Family</option>
       </select>
     </div>
-    <button class="form-submit">Send My Free Class Request →</button>
+    <button type="submit" class="form-submit">Send My Free Class Request →</button>
     <p class="form-fine">We'll never share your info. Reply STOP to cancel texts anytime.</p>
-  </div>
+  </form>
 </section>
 
 <!-- INFO BAR -->

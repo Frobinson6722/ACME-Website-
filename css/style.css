@@ -210,13 +210,41 @@ nav {
   margin-top: 48px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   animation: fadeUp 0.7s 0.4s ease both;
+  text-decoration: none;
+  background: rgba(255,255,255,0.06);
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.hero-trust:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
 }
 
 .stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; }
 
+.trust-rating {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
 .trust-text { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+
+.trust-arrow {
+  color: var(--gold);
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
+
+.hero-trust:hover .trust-arrow { transform: translateX(4px); }
+.hero-trust:hover .trust-text { color: rgba(255,255,255,0.85); }
 
 /* ── RIBBON ── */
 .ribbon {

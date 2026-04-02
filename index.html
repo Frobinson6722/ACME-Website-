@@ -33,10 +33,12 @@
     <a href="#signup" class="btn-primary">Claim Your Free Class →</a>
     <a href="#programs" class="btn-ghost">See Programs</a>
   </div>
-  <div class="hero-trust">
+  <a href="https://www.google.com/maps/place/Kinetic+Taekwondo/@35.0073,-80.9457,17z/" target="_blank" rel="noopener" class="hero-trust" id="googleReviews">
     <span class="stars">★★★★★</span>
-    <span class="trust-text">5-star rated · Hundreds of Fort Mill families</span>
-  </div>
+    <span class="trust-rating">4.9</span>
+    <span class="trust-text">· <span id="reviewCount">29</span> reviews on Google</span>
+    <span class="trust-arrow">→</span>
+  </a>
 </section>
 
 <!-- RIBBON -->
@@ -288,6 +290,22 @@
 document.querySelector('.nav-toggle').addEventListener('click', function() {
   document.querySelector('.nav-links').classList.toggle('open');
 });
+
+// ── GOOGLE REVIEWS (Dynamic) ──
+// To enable live updates, add your Google Places API key below.
+// Get one free at: console.cloud.google.com → Enable "Places API" → Credentials → Create API Key
+// Replace 'YOUR_API_KEY' and uncomment the code block.
+//
+// const GOOGLE_API_KEY = 'YOUR_API_KEY';
+// const PLACE_ID = 'ChIJBRscXj6bVogRi4-Li4-PCU4'; // Kinetic Taekwondo Fort Mill
+// fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=rating,user_ratings_total&key=${GOOGLE_API_KEY}`)
+//   .then(r => r.json())
+//   .then(data => {
+//     if (data.result) {
+//       document.querySelector('.trust-rating').textContent = data.result.rating;
+//       document.getElementById('reviewCount').textContent = data.result.user_ratings_total;
+//     }
+//   });
 </script>
 </body>
 </html>

@@ -345,7 +345,11 @@ section { padding: 72px 24px; }
 .program-card:hover .program-link::after { transform: translateX(4px); }
 
 /* ── ABOUT US ── */
-.about { background: var(--white); }
+.about { background: var(--dark); color: var(--white); }
+
+.about .section-label { color: var(--gold); }
+.about .section-title { color: var(--white); }
+.about .section-sub { color: rgba(255,255,255,0.6); }
 
 .about-grid {
   display: flex;
@@ -356,16 +360,17 @@ section { padding: 72px 24px; }
 
 .about-card {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 40px;
-  align-items: start;
-  background: var(--soft);
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  align-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius);
   padding: 40px;
 }
 
 .about-card--reverse {
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 300px;
 }
 
 .about-card--reverse .about-img { order: 2; }
@@ -378,9 +383,11 @@ section { padding: 72px 24px; }
 
 .about-img img {
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
   border-radius: var(--radius);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  background: var(--white);
+  padding: 8px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.3);
 }
 
 .about-badge {
@@ -397,30 +404,33 @@ section { padding: 72px 24px; }
 }
 
 .about-info h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 6px;
+  color: var(--white);
 }
 
 .about-rank {
   font-size: 0.85rem;
-  color: var(--green);
+  color: var(--gold);
   font-weight: 700;
   margin-bottom: 16px;
   padding-bottom: 16px;
-  border-bottom: 2px solid rgba(26,122,46,0.15);
+  border-bottom: 2px solid rgba(255,255,255,0.1);
 }
 
 .about-info p {
   font-size: 0.95rem;
-  color: #333;
+  color: rgba(255,255,255,0.75);
   line-height: 1.8;
   margin-bottom: 14px;
 }
 
+.about-info strong { color: var(--gold); }
+
 .about-motto {
   text-align: center;
   margin-top: 48px;
-  padding: 32px 24px;
+  padding: 40px 24px;
   background: var(--green);
   border-radius: var(--radius);
 }
@@ -444,10 +454,11 @@ section { padding: 72px 24px; }
   .about-card--reverse {
     grid-template-columns: 1fr;
     padding: 28px 20px;
+    text-align: center;
   }
   .about-card--reverse .about-img { order: 0; }
   .about-card--reverse .about-info { order: 0; }
-  .about-img img { max-width: 240px; }
+  .about-img img { max-width: 220px; }
 }
 
 /* ── WHY US ── */

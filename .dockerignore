@@ -1,6 +1,5 @@
 Dockerfile
 .dockerignore
-nginx.conf
 .git
 .gitignore
 img/ANIME.png

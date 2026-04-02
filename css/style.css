@@ -133,7 +133,7 @@ nav {
   filter: saturate(0.8);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .hero-bg-img {
     display: none;
   }

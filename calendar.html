@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Events Calendar | Kinetic Taekwondo · Fort Mill, SC</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=17">
+<link rel="stylesheet" href="css/style.css?v=18">
 <style>
 section,.ribbon,.info-bar,.cta-band{position:relative}
 section::after,.ribbon::after,.info-bar::after,.cta-band::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:3px;background:inherit;z-index:10;pointer-events:none}
@@ -246,8 +246,8 @@ function renderComingUpCards() {
       typed.map(e => {
         const d = new Date(e.date + 'T12:00:00');
         const label = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-        return '<li style="font-size:0.82rem;color:#6B6B6B;padding:6px 0;border-bottom:1px solid #eee;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
-          '<strong style="color:#0D0D0D;">' + label + '</strong> · ' + e.time + ' — ' + e.title + '</li>';
+        return '<li style="font-size:0.82rem;color:#6B6B6B;padding:6px 0;border-bottom:1px solid #D6D3C8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
+          '<strong style="color:#1A1A1A;">' + label + '</strong> · ' + e.time + ' — ' + e.title + '</li>';
       }).join('') +
       '</ul></div>';
   });

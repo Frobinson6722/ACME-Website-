@@ -1245,16 +1245,17 @@ footer a:hover { color: var(--white); }
 }
 
 /* ── COMING UP CARDS ── */
+#comingUpGrid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 #comingUpGrid .program-card {
   display: flex;
   flex-direction: column;
-  max-height: 420px;
 }
 
 #comingUpGrid .program-card ul {
   flex: 1;
-  overflow-y: auto;
-  max-height: 280px;
   margin: 0;
   padding: 0;
   list-style: none;

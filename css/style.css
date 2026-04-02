@@ -680,21 +680,50 @@ footer a:hover { color: var(--white); }
 }
 
 .blog-modal-body h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.4rem;
-  letter-spacing: 0.03em;
-  color: var(--dark);
-  margin: 28px 0 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--green);
+  margin: 32px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--soft);
 }
 
 .blog-modal-body p {
-  font-size: 0.95rem;
-  color: var(--dark);
-  line-height: 1.75;
-  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.85;
+  margin-bottom: 20px;
 }
 
 .blog-modal-body strong { color: var(--green); }
+
+.blog-modal-body blockquote {
+  border-left: 4px solid var(--green);
+  padding: 16px 20px;
+  margin: 24px 0;
+  background: var(--soft);
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.blog-modal-body .takeaway {
+  background: var(--soft);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 28px 0;
+  border-left: 4px solid var(--green);
+}
+
+.blog-modal-body .takeaway strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
 
 @media (max-width: 600px) {
   .blog-modal { padding: 32px 20px; }

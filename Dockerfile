@@ -1,6 +1,6 @@
-FROM nginx:alpine
-RUN rm -rf /docker-entrypoint.d/
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY . /usr/share/nginx/html
+FROM python:3-alpine
+WORKDIR /app
+COPY index.html .
+COPY css/ css/
 EXPOSE 8000
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["python", "-m", "http.server", "8000"]

@@ -748,6 +748,16 @@ footer a:hover { color: var(--white); }
   font-style: italic;
 }
 
+.cal-date-divider {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--green);
+  padding: 8px 0 4px;
+  border-bottom: 1px solid rgba(26,122,46,0.15);
+  margin-top: 8px;
+}
+
 .cal-event {
   border-left: 4px solid var(--green);
   padding: 16px 16px 16px 20px;

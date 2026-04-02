@@ -118,6 +118,63 @@
   </div>
 </section>
 
+<!-- CALENDAR + SIDEBAR -->
+<section class="cal-section" style="background:var(--soft);">
+  <div class="cal-layout">
+
+    <!-- CALENDAR -->
+    <div class="cal-main">
+      <div class="cal-header">
+        <button class="cal-nav-btn" id="prevMonth">‹</button>
+        <h2 class="cal-month" id="calMonth"></h2>
+        <button class="cal-nav-btn" id="nextMonth">›</button>
+      </div>
+      <div class="cal-weekdays">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+      <div class="cal-legend">
+        <span class="cal-legend-item"><span class="cal-dot" style="background:#C1121F;"></span> Belt Testing</span>
+        <span class="cal-legend-item"><span class="cal-dot" style="background:#F4A823;"></span> Tournaments</span>
+        <span class="cal-legend-item"><span class="cal-dot" style="background:#1A7A2E;"></span> Birthday Parties</span>
+        <span class="cal-legend-item"><span class="cal-dot" style="background:#6366F1;"></span> Special Events</span>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="cal-sidebar">
+      <div class="cal-sidebar-top">
+        <h3 class="cal-sidebar-title" id="sidebarTitle">Today's Events</h3>
+        <div class="cal-filters">
+          <button class="cal-filter active" data-filter="all">All</button>
+          <button class="cal-filter" data-filter="testing" style="--fc:#C1121F;">🥋 Testing</button>
+          <button class="cal-filter" data-filter="tournament" style="--fc:#F4A823;">🏆 Tourneys</button>
+          <button class="cal-filter" data-filter="birthday" style="--fc:#1A7A2E;">🎂 Birthdays</button>
+          <button class="cal-filter" data-filter="special" style="--fc:#6366F1;">⭐ Special</button>
+        </div>
+        <div class="cal-filters" style="margin-top:8px;">
+          <button class="cal-filter cal-class-filter active" data-class="all">All Ages</button>
+          <button class="cal-filter cal-class-filter" data-class="dragons">🐉 Little Dragons</button>
+          <button class="cal-filter cal-class-filter" data-class="ninja">🥋 Ninja Kids</button>
+          <button class="cal-filter cal-class-filter" data-class="teens">⚡ Teens</button>
+          <button class="cal-filter cal-class-filter" data-class="adult">🏆 Adults</button>
+        </div>
+      </div>
+      <div class="cal-timeline" id="calTimeline">
+        <p class="cal-empty">Select a date to see events</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS BY TYPE (auto-generated) -->
+<section class="programs" id="comingUp">
+  <div class="section-label">This Month</div>
+  <h2 class="section-title">Don't Miss These</h2>
+  <p class="section-sub">Key dates for the Kinetic TKD family this month, organized by type.</p>
+  <div class="programs-grid" id="comingUpGrid"></div>
+</section>
 
 <!-- CTA BAND -->
 <section class="cta-band">

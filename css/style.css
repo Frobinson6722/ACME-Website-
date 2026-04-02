@@ -239,43 +239,44 @@ nav {
 
 .hero-trust {
   margin-top: 28px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   animation: fadeUp 0.7s 0.4s ease both;
   text-decoration: none;
-  background: rgba(255,255,255,0.06);
-  padding: 10px 20px;
-  border-radius: 50px;
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: background 0.2s, border-color 0.2s;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  transition: opacity 0.2s;
   cursor: pointer;
 }
 
 .hero-trust:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.2);
+  opacity: 0.85;
+  background: none;
+  border-color: transparent;
 }
 
-.stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; }
+.stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 1px; }
 
 .trust-rating {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
-  color: var(--white);
-  letter-spacing: 0.02em;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
 }
 
-.trust-text { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+.trust-text { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
 
 .trust-arrow {
-  color: var(--gold);
-  font-size: 1rem;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
   transition: transform 0.2s;
 }
 
 .hero-trust:hover .trust-arrow { transform: translateX(4px); }
-.hero-trust:hover .trust-text { color: rgba(255,255,255,0.85); }
+.hero-trust:hover .trust-text { color: rgba(255,255,255,0.7); }
 
 /* ── RIBBON ── */
 .ribbon {

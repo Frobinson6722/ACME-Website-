@@ -1282,11 +1282,11 @@ footer a:hover { color: var(--white); }
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 1rem; }
   .nav-cta { display: none; }
-  .nav-toggle { display: block; }
+  .nav-toggle { display: block; margin-left: auto; }
   .hero { padding: 100px 20px 50px; }
   section { padding: 56px 20px; }
   .hero-actions { flex-direction: column; }
-  .btn-primary, .btn-ghost { text-align: center; width: 100%; max-width: 320px; }
+  .btn-primary, .btn-ghost { text-align: center; width: 100%; max-width: 280px; padding: 12px 24px; font-size: 0.9rem; }
   .signup-form { padding: 28px 20px; }
   .cta-band { padding: 52px 20px; }
   .programs-grid, .benefits-grid { grid-template-columns: 1fr; }

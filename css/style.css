@@ -148,7 +148,7 @@ nav {
 }
 
 .hero-eyebrow {
-  display: inline-block;
+  display: none;
   background: var(--green);
   color: var(--white);
   font-weight: 800;
@@ -191,10 +191,10 @@ nav {
 .btn-primary {
   background: var(--green);
   color: var(--white);
-  padding: 16px 32px;
+  padding: 12px 24px;
   border-radius: 50px;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
   transition: background 0.2s, transform 0.15s;
   display: inline-block;
@@ -205,10 +205,10 @@ nav {
 .btn-ghost {
   background: transparent;
   color: var(--white);
-  padding: 16px 28px;
+  padding: 12px 24px;
   border-radius: 50px;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
   border: 2px solid rgba(255,255,255,0.25);
   transition: border-color 0.2s;
@@ -1283,7 +1283,6 @@ footer a:hover { color: var(--white); }
   .nav-links a { font-size: 1rem; }
   .nav-cta { display: none; }
   .nav-toggle { display: block; margin-left: auto; }
-  .hero-eyebrow { display: none; }
   .hero { padding: 100px 20px 50px; }
   section { padding: 56px 20px; }
   .hero-actions { flex-direction: column; }

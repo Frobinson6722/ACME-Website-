@@ -129,11 +129,6 @@ nav {
   overflow: hidden;
 }
 
-.hero--compact {
-  min-height: 100vh;
-  padding: 100px max(24px, calc((100% - 1140px) / 2)) 40px;
-}
-
 .hero::before {
   content: none;
 }
@@ -169,7 +164,7 @@ nav {
 
 .hero--compact {
   min-height: 35vh;
-  padding: 100px 24px 40px;
+  padding: 100px max(24px, calc((100% - 1140px) / 2)) 40px;
 }
 
 .hero-eyebrow {

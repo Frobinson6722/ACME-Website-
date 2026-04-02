@@ -144,7 +144,7 @@ nav {
   object-fit: contain;
   pointer-events: none;
   user-select: none;
-  opacity: 0.35;
+  opacity: 0.8;
   filter: saturate(0.8);
 }
 

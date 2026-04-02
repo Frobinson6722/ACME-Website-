@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events Calendar | Kinetic Taekwondo · Fort Mill, SC</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><a href="index.html" style="color:inherit;text-decoration:none;">KINETIC <span>TKD</span></a></div>
+  <ul class="nav-links">
+    <li><a href="index.html#programs">Programs</a></li>
+    <li><a href="calendar.html" style="color:var(--white);">Calendar</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="index.html#signup">Contact</a></li>
+  </ul>
+  <a href="index.html#signup" class="nav-cta">Free First Class</a>
+  <button class="nav-toggle" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="min-height:50vh;">
+  <div class="hero-eyebrow">Upcoming Events</div>
+  <h1>Dojo <span>Calendar</span></h1>
+  <p class="hero-sub">Belt testing, tournaments, birthday parties, and special events — all in one place.</p>
+  <div class="hero-actions">
+    <a href="#calendar" class="btn-primary">View Calendar →</a>
+    <a href="index.html" class="btn-ghost">Back to Home</a>
+  </div>
+</section>
+
+<!-- RIBBON -->
+<div class="ribbon">
+  <div class="ribbon-inner">
+    <span class="ribbon-item">🥋 Belt Testing</span>
+    <span class="ribbon-item">🏆 Tournaments</span>
+    <span class="ribbon-item">🎂 Birthday Parties</span>
+    <span class="ribbon-item">⭐ Special Events</span>
+    <span class="ribbon-item">🏕️ Summer Camp</span>
+    <span class="ribbon-item">🥋 Belt Testing</span>
+    <span class="ribbon-item">🏆 Tournaments</span>
+    <span class="ribbon-item">🎂 Birthday Parties</span>
+    <span class="ribbon-item">⭐ Special Events</span>
+    <span class="ribbon-item">🏕️ Summer Camp</span>
+  </div>
+</div>
+
+<!-- EVENT TYPE LEGEND -->
+<section id="calendar" style="background:var(--soft);padding-bottom:0;">
+  <div class="section-label">Event Types</div>
+  <div class="cal-legend">
+    <span class="cal-legend-item"><span class="cal-dot" style="background:#C1121F;"></span> Belt Testing</span>
+    <span class="cal-legend-item"><span class="cal-dot" style="background:#F4A823;"></span> Tournaments</span>
+    <span class="cal-legend-item"><span class="cal-dot" style="background:#1A7A2E;"></span> Birthday Parties</span>
+    <span class="cal-legend-item"><span class="cal-dot" style="background:#6366F1;"></span> Special Events</span>
+  </div>
+</section>
+
+<!-- CALENDAR + SIDEBAR -->
+<section class="cal-section" style="background:var(--soft);">
+  <div class="cal-layout">
+
+    <!-- CALENDAR -->
+    <div class="cal-main">
+      <div class="cal-header">
+        <button class="cal-nav-btn" id="prevMonth">‹</button>
+        <h2 class="cal-month" id="calMonth"></h2>
+        <button class="cal-nav-btn" id="nextMonth">›</button>
+      </div>
+      <div class="cal-weekdays">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="cal-sidebar">
+      <h3 class="cal-sidebar-title" id="sidebarTitle">Today's Events</h3>
+      <div class="cal-timeline" id="calTimeline">
+        <p class="cal-empty">Select a date to see events</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS CARDS -->
+<section class="programs">
+  <div class="section-label">Coming Up</div>
+  <h2 class="section-title">Don't Miss These</h2>
+  <p class="section-sub">Key dates for the Kinetic TKD family. Mark your calendars!</p>
+
+  <div class="programs-grid">
+    <div class="program-card">
+      <span class="program-age" style="background:rgba(193,18,31,0.1);color:#C1121F;">Belt Testing</span>
+      <span class="program-icon">🥋</span>
+      <h3>Spring Belt Test</h3>
+      <p>Students test for their next rank. Arrive 15 min early in full uniform. Family welcome to watch!</p>
+      <div class="blog-meta"><span>April 19, 2026</span><span>·</span><span>10:00 AM</span></div>
+    </div>
+
+    <div class="program-card">
+      <span class="program-age" style="background:rgba(244,168,35,0.1);color:#F4A823;">Tournament</span>
+      <span class="program-icon">🏆</span>
+      <h3>Fort Mill Invitational</h3>
+      <p>Our annual tournament is back! Compete in forms, sparring, and board breaking. All levels welcome.</p>
+      <div class="blog-meta"><span>May 10, 2026</span><span>·</span><span>9:00 AM</span></div>
+    </div>
+
+    <div class="program-card">
+      <span class="program-age" style="background:rgba(26,122,46,0.1);color:#1A7A2E;">Birthday</span>
+      <span class="program-icon">🎂</span>
+      <h3>TKD Birthday Parties</h3>
+      <p>Book a martial arts birthday party your kid will never forget. Games, training, cake — the works.</p>
+      <div class="blog-meta"><span>Every Weekend</span><span>·</span><span>Book anytime</span></div>
+    </div>
+
+    <div class="program-card">
+      <span class="program-age" style="background:rgba(99,102,241,0.1);color:#6366F1;">Special</span>
+      <span class="program-icon">🏕️</span>
+      <h3>Summer Camp 2026</h3>
+      <p>A full week of martial arts, games, leadership activities, and fun. Ages 5–14. Limited spots!</p>
+      <div class="blog-meta"><span>June 16–20, 2026</span><span>·</span><span>9 AM – 3 PM</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <h2>QUESTIONS ABOUT AN EVENT?</h2>
+  <p>Reach out anytime — we're happy to help you plan ahead.</p>
+  <a href="index.html#signup" class="btn-primary" style="background:var(--white);color:var(--green);font-size:1.05rem;padding:18px 40px;">Contact Us →</a>
+</section>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+  <div class="info-item">
+    <span class="info-icon">📍</span>
+    <span><strong>3150 US-21, Suite 104</strong><br>Fort Mill, SC 29715</span>
+  </div>
+  <div class="info-item">
+    <span class="info-icon">📞</span>
+    <span><strong>Call or Text Us</strong><br>to schedule a visit</span>
+  </div>
+  <div class="info-item">
+    <span class="info-icon">🏅</span>
+    <span><strong>25 Years Experience</strong><br>Fort Mill's trusted dojo</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Kinetic Taekwondo · Fort Mill, SC · <a href="#">Privacy Policy</a></p>
+</footer>
+
+<script>
+// ── EVENT DATA ──
+const events = [
+  { date: '2026-04-05', title: 'Little Dragons Class', time: '10:00 AM', type: 'special', icon: '⭐', desc: 'Special intro class for new students ages 3–5' },
+  { date: '2026-04-12', title: 'Parent Watch Day', time: '11:00 AM', type: 'special', icon: '⭐', desc: 'Parents invited to watch and participate in class' },
+  { date: '2026-04-19', title: 'Spring Belt Test', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Students test for next rank. Arrive 15 min early in full uniform.' },
+  { date: '2026-04-19', title: 'Belt Ceremony & Photos', time: '12:30 PM', type: 'testing', icon: '🥋', desc: 'Celebration and photos for all new belt recipients.' },
+  { date: '2026-04-26', title: 'TKD Birthday Party', time: '2:00 PM', type: 'birthday', icon: '🎂', desc: 'Private birthday party — games, training, cake!' },
+  { date: '2026-05-03', title: 'Tournament Prep Workshop', time: '9:00 AM', type: 'tournament', icon: '🏆', desc: 'Get ready for the Fort Mill Invitational. Forms & sparring drills.' },
+  { date: '2026-05-10', title: 'Fort Mill Invitational', time: '9:00 AM', type: 'tournament', icon: '🏆', desc: 'Annual tournament — forms, sparring, board breaking. All levels.' },
+  { date: '2026-05-10', title: 'Awards Ceremony', time: '3:00 PM', type: 'tournament', icon: '🏆', desc: 'Medals and trophies for all competitors.' },
+  { date: '2026-05-17', title: 'TKD Birthday Party', time: '1:00 PM', type: 'birthday', icon: '🎂', desc: 'Private birthday party with martial arts games.' },
+  { date: '2026-05-24', title: 'Memorial Day — No Classes', time: 'All Day', type: 'special', icon: '⭐', desc: 'Dojo closed for Memorial Day. See you Tuesday!' },
+  { date: '2026-06-07', title: 'Summer Belt Test', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Summer testing day. All eligible students welcome.' },
+  { date: '2026-06-14', title: 'TKD Birthday Party', time: '3:00 PM', type: 'birthday', icon: '🎂', desc: 'Weekend birthday bash at the dojo.' },
+  { date: '2026-06-16', title: 'Summer Camp Day 1', time: '9:00 AM', type: 'special', icon: '🏕️', desc: 'Summer camp kicks off! Ages 5–14. 9 AM – 3 PM.' },
+  { date: '2026-06-17', title: 'Summer Camp Day 2', time: '9:00 AM', type: 'special', icon: '🏕️', desc: 'Camp continues — leadership and team games.' },
+  { date: '2026-06-18', title: 'Summer Camp Day 3', time: '9:00 AM', type: 'special', icon: '🏕️', desc: 'Mid-week camp day — board breaking workshop.' },
+  { date: '2026-06-19', title: 'Summer Camp Day 4', time: '9:00 AM', type: 'special', icon: '🏕️', desc: 'Camp day 4 — sparring games and obstacle course.' },
+  { date: '2026-06-20', title: 'Summer Camp Day 5', time: '9:00 AM', type: 'special', icon: '🏕️', desc: 'Camp finale! Demo for parents at 2 PM.' },
+  { date: '2026-07-04', title: 'Independence Day — No Classes', time: 'All Day', type: 'special', icon: '⭐', desc: 'Dojo closed. Happy 4th of July!' },
+  { date: '2026-07-18', title: 'Mid-Year Tournament', time: '10:00 AM', type: 'tournament', icon: '🏆', desc: 'Regional TKD tournament. Register by July 10.' },
+  { date: '2026-08-01', title: 'Fall Belt Test', time: '10:00 AM', type: 'testing', icon: '🥋', desc: 'Fall testing for all eligible students.' },
+  { date: '2026-08-15', title: 'Back to School Bash', time: '11:00 AM', type: 'special', icon: '⭐', desc: 'Fun event to kick off the school year. Games and prizes!' },
+  { date: '2026-08-22', title: 'TKD Birthday Party', time: '2:00 PM', type: 'birthday', icon: '🎂', desc: 'Weekend birthday celebration at the dojo.' },
+];
+
+const typeColors = {
+  testing: '#C1121F',
+  tournament: '#F4A823',
+  birthday: '#1A7A2E',
+  special: '#6366F1'
+};
+
+// ── CALENDAR LOGIC ──
+let currentDate = new Date(2026, 3, 1); // April 2026
+
+const calMonth = document.getElementById('calMonth');
+const calGrid = document.getElementById('calGrid');
+const calTimeline = document.getElementById('calTimeline');
+const sidebarTitle = document.getElementById('sidebarTitle');
+
+function renderCalendar() {
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  calMonth.textContent = monthNames[month] + ' ' + year;
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  calGrid.innerHTML = '';
+
+  // Empty cells before first day
+  for (let i = 0; i < firstDay; i++) {
+    const empty = document.createElement('div');
+    empty.className = 'cal-day cal-day-empty';
+    calGrid.appendChild(empty);
+  }
+
+  // Day cells
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dateStr = year + '-' + String(month+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+    const dayEvents = events.filter(e => e.date === dateStr);
+    const cell = document.createElement('div');
+    cell.className = 'cal-day' + (dayEvents.length ? ' cal-day-has-event' : '');
+
+    const num = document.createElement('span');
+    num.className = 'cal-day-num';
+    num.textContent = d;
+    cell.appendChild(num);
+
+    if (dayEvents.length) {
+      const dots = document.createElement('div');
+      dots.className = 'cal-dots';
+      const seen = new Set();
+      dayEvents.forEach(ev => {
+        if (!seen.has(ev.type)) {
+          seen.add(ev.type);
+          const dot = document.createElement('span');
+          dot.className = 'cal-dot';
+          dot.style.background = typeColors[ev.type];
+          dots.appendChild(dot);
+        }
+      });
+      cell.appendChild(dots);
+    }
+
+    cell.addEventListener('click', () => showDayEvents(dateStr, dayEvents));
+    calGrid.appendChild(cell);
+  }
+}
+
+function showDayEvents(dateStr, dayEvents) {
+  // Highlight selected day
+  document.querySelectorAll('.cal-day').forEach(d => d.classList.remove('cal-day-selected'));
+  const allDays = document.querySelectorAll('.cal-day:not(.cal-day-empty)');
+  const dayNum = parseInt(dateStr.split('-')[2]);
+  allDays.forEach(d => {
+    if (d.querySelector('.cal-day-num') && d.querySelector('.cal-day-num').textContent == dayNum) {
+      d.classList.add('cal-day-selected');
+    }
+  });
+
+  const date = new Date(dateStr + 'T12:00:00');
+  const opts = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+  sidebarTitle.textContent = date.toLocaleDateString('en-US', opts);
+
+  if (!dayEvents.length) {
+    calTimeline.innerHTML = '<p class="cal-empty">No events scheduled for this day.</p>';
+    return;
+  }
+
+  calTimeline.innerHTML = dayEvents.map(ev => `
+    <div class="cal-event" style="border-left-color:${typeColors[ev.type]};">
+      <div class="cal-event-top">
+        <span class="cal-event-icon">${ev.icon}</span>
+        <span class="cal-event-time">${ev.time}</span>
+      </div>
+      <h4 class="cal-event-title">${ev.title}</h4>
+      <p class="cal-event-desc">${ev.desc}</p>
+    </div>
+  `).join('');
+}
+
+document.getElementById('prevMonth').addEventListener('click', () => {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar();
+  calTimeline.innerHTML = '<p class="cal-empty">Select a date to see events</p>';
+  sidebarTitle.textContent = "Today's Events";
+});
+
+document.getElementById('nextMonth').addEventListener('click', () => {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar();
+  calTimeline.innerHTML = '<p class="cal-empty">Select a date to see events</p>';
+  sidebarTitle.textContent = "Today's Events";
+});
+
+renderCalendar();
+
+// Mobile menu toggle
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+</body>
+</html>

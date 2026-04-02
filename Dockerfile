@@ -1,6 +1,6 @@
 FROM python:3-alpine
 WORKDIR /app
-COPY index.html .
+COPY *.html .
 COPY css/ css/
 EXPOSE 8000
 CMD ["python", "-m", "http.server", "8000"]

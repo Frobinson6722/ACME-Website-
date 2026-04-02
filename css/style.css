@@ -1,9 +1,11 @@
 :root {
+  --green: #1A7A2E;
+  --green-dark: #145F23;
   --red: #C1121F;
   --dark: #0D0D0D;
   --white: #FAFAFA;
   --gold: #F4A823;
-  --soft: #F5F0EB;
+  --soft: #F0F5F1;
   --gray: #6B6B6B;
   --radius: 16px;
 }
@@ -44,10 +46,10 @@ nav {
   letter-spacing: 0.05em;
 }
 
-.nav-logo span { color: var(--red); }
+.nav-logo span { color: var(--green); }
 
 .nav-cta {
-  background: var(--red);
+  background: var(--green);
   color: var(--white);
   border: none;
   padding: 10px 20px;
@@ -60,7 +62,7 @@ nav {
   transition: background 0.2s, transform 0.1s;
 }
 
-.nav-cta:hover { background: #a00e19; transform: scale(1.04); }
+.nav-cta:hover { background: var(--green-dark); transform: scale(1.04); }
 
 /* ── HERO ── */
 .hero {
@@ -83,7 +85,7 @@ nav {
   transform: translateY(-50%);
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(200px, 40vw, 420px);
-  color: rgba(193,18,31,0.07);
+  color: rgba(26,122,46,0.07);
   line-height: 1;
   pointer-events: none;
   user-select: none;
@@ -91,7 +93,7 @@ nav {
 
 .hero-eyebrow {
   display: inline-block;
-  background: var(--red);
+  background: var(--green);
   color: var(--white);
   font-weight: 800;
   font-size: 0.75rem;
@@ -131,7 +133,7 @@ nav {
 }
 
 .btn-primary {
-  background: var(--red);
+  background: var(--green);
   color: var(--white);
   padding: 16px 32px;
   border-radius: 50px;
@@ -142,7 +144,7 @@ nav {
   display: inline-block;
 }
 
-.btn-primary:hover { background: #a00e19; transform: scale(1.03); }
+.btn-primary:hover { background: var(--green-dark); transform: scale(1.03); }
 
 .btn-ghost {
   background: transparent;
@@ -173,7 +175,7 @@ nav {
 
 /* ── RIBBON ── */
 .ribbon {
-  background: var(--red);
+  background: var(--green);
   padding: 14px 0;
   overflow: hidden;
   white-space: nowrap;
@@ -210,7 +212,7 @@ section { padding: 72px 24px; }
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--green);
   margin-bottom: 10px;
 }
 
@@ -269,7 +271,7 @@ section { padding: 72px 24px; }
 .program-age {
   display: inline-block;
   background: var(--soft);
-  color: var(--red);
+  color: var(--green);
   font-weight: 800;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -296,7 +298,7 @@ section { padding: 72px 24px; }
 .program-link {
   font-weight: 800;
   font-size: 0.85rem;
-  color: var(--red);
+  color: var(--green);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -326,8 +328,8 @@ section { padding: 72px 24px; }
 }
 
 .benefit:hover {
-  border-color: var(--red);
-  background: rgba(193,18,31,0.05);
+  border-color: var(--green);
+  background: rgba(26,122,46,0.05);
 }
 
 .benefit-icon { font-size: 2rem; margin-bottom: 12px; }
@@ -376,7 +378,7 @@ section { padding: 72px 24px; }
 
 /* ── CTA BAND ── */
 .cta-band {
-  background: var(--red);
+  background: var(--green);
   padding: 72px 24px;
   text-align: center;
 }
@@ -435,12 +437,12 @@ section { padding: 72px 24px; }
 }
 
 .form-group input:focus,
-.form-group select:focus { border-color: var(--red); }
+.form-group select:focus { border-color: var(--green); }
 
 .form-submit {
   width: 100%;
   padding: 16px;
-  background: var(--red);
+  background: var(--green);
   color: var(--white);
   border: none;
   border-radius: 10px;
@@ -452,7 +454,7 @@ section { padding: 72px 24px; }
   margin-top: 8px;
 }
 
-.form-submit:hover { background: #a00e19; transform: scale(1.02); }
+.form-submit:hover { background: var(--green-dark); transform: scale(1.02); }
 
 .form-fine {
   font-size: 0.75rem;

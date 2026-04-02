@@ -314,6 +314,8 @@ section {
   padding: 72px 24px;
   padding-left: max(24px, calc((100% - 1140px) / 2));
   padding-right: max(24px, calc((100% - 1140px) / 2));
+  margin-top: -1px;
+  border-top: 1px solid transparent;
 }
 
 .section-label {

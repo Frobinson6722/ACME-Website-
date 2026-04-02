@@ -19,6 +19,8 @@ body {
   background: var(--white);
   color: var(--dark);
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3, .display {

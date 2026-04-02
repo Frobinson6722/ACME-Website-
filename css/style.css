@@ -621,9 +621,10 @@ footer a:hover { color: var(--white); }
 
 .cal-layout {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
-  max-width: 1100px;
+  max-width: 1400px;
+  width: 100%;
 }
 
 .cal-main {
@@ -725,8 +726,8 @@ footer a:hover { color: var(--white); }
   border-radius: var(--radius);
   padding: 28px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-  max-height: 600px;
   overflow-y: auto;
+  align-self: start;
 }
 
 .cal-sidebar-title {

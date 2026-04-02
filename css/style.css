@@ -597,6 +597,110 @@ footer a:hover { color: var(--white); }
   font-weight: 600;
 }
 
+/* ── BLOG MODAL ── */
+.blog-emoji {
+  font-size: 1.2rem;
+  margin-right: 4px;
+}
+
+.blog-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(4px);
+}
+
+.blog-modal-overlay.open {
+  display: flex;
+}
+
+.blog-modal {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.blog-modal-close {
+  position: absolute;
+  top: 16px; right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--gray);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.blog-modal-close:hover { color: var(--dark); }
+
+.blog-modal-tag {
+  display: inline-block;
+  background: rgba(26,122,46,0.1);
+  color: var(--green);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.blog-modal-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+
+.blog-modal-meta {
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-weight: 600;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.blog-modal-body h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+  color: var(--dark);
+  margin: 28px 0 10px;
+}
+
+.blog-modal-body p {
+  font-size: 0.95rem;
+  color: var(--dark);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.blog-modal-body strong { color: var(--green); }
+
+@media (max-width: 600px) {
+  .blog-modal { padding: 32px 20px; }
+  .blog-modal-title { font-size: 1.6rem; }
+}
+
 /* ── WEEKLY SCHEDULE ── */
 .weekly-grid {
   display: grid;

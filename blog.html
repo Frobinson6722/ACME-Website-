@@ -23,17 +23,13 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero hero--compact">
   <div class="hero-eyebrow">Kinetic Taekwondo Blog</div>
   <h1>News, Tips & <span>Stories</span></h1>
   <p class="hero-sub">Insights from 25 years of building confident kids and strong families through martial arts in Fort Mill.</p>
   <div class="hero-actions">
     <a href="#posts" class="btn-primary">Read Latest →</a>
     <a href="index.html" class="btn-ghost">Back to Home</a>
-  </div>
-  <div class="hero-trust">
-    <span class="stars">★★★★★</span>
-    <span class="trust-text">Tips from Fort Mill's most trusted dojo</span>
   </div>
 </section>
 
@@ -62,77 +58,22 @@
   <div class="section-label">Latest Articles</div>
   <h2 class="section-title">From the Dojo</h2>
   <p class="section-sub">Real advice, real stories, and real results from our community of martial artists.</p>
-
-  <div class="blog-grid">
-
-    <article class="blog-card">
-      <div class="blog-tag">Parenting</div>
-      <h2>5 Signs Your Child Is Ready for Martial Arts</h2>
-      <p>Wondering if your 3 or 4-year-old is ready to start? Here's what to look for — and why starting early can make a huge difference.</p>
-      <div class="blog-meta">
-        <span>April 1, 2025</span>
-        <span>·</span>
-        <span>4 min read</span>
-      </div>
-    </article>
-
-    <article class="blog-card">
-      <div class="blog-tag">Confidence</div>
-      <h2>How Belt Testing Builds Real Confidence in Kids</h2>
-      <p>It's not just about the belt color. The process of preparing, failing, and succeeding teaches kids something no classroom can.</p>
-      <div class="blog-meta">
-        <span>March 20, 2025</span>
-        <span>·</span>
-        <span>5 min read</span>
-      </div>
-    </article>
-
-    <article class="blog-card">
-      <div class="blog-tag">Self Defense</div>
-      <h2>Why Every Teen Should Know Basic Self Defense</h2>
-      <p>Bullying, peer pressure, and safety concerns are real. Here's why self-defense training gives teens an edge — mentally and physically.</p>
-      <div class="blog-meta">
-        <span>March 10, 2025</span>
-        <span>·</span>
-        <span>3 min read</span>
-      </div>
-    </article>
-
-    <article class="blog-card">
-      <div class="blog-tag">Community</div>
-      <h2>What Makes Kinetic Different from Other Dojos</h2>
-      <p>We're not a belt factory. We showed up at students' houses during COVID. Here's the story of how Kinetic became a family.</p>
-      <div class="blog-meta">
-        <span>February 28, 2025</span>
-        <span>·</span>
-        <span>6 min read</span>
-      </div>
-    </article>
-
-    <article class="blog-card">
-      <div class="blog-tag">Fitness</div>
-      <h2>Adults: Why Krav Maga Beats the Gym Every Time</h2>
-      <p>Tired of treadmills and dumbbells? Krav Maga gives you real fitness, real skills, and a real community — all in one class.</p>
-      <div class="blog-meta">
-        <span>February 15, 2025</span>
-        <span>·</span>
-        <span>4 min read</span>
-      </div>
-    </article>
-
-    <article class="blog-card">
-      <div class="blog-tag">Focus</div>
-      <h2>How Taekwondo Helps Kids with ADHD Focus Better</h2>
-      <p>Structure, movement, and respect — the three ingredients that help kids who struggle with attention thrive on the mat.</p>
-      <div class="blog-meta">
-        <span>February 1, 2025</span>
-        <span>·</span>
-        <span>5 min read</span>
-      </div>
-    </article>
-
-  </div>
+  <div class="blog-grid" id="blogGrid"></div>
 </section>
+
+<!-- BLOG MODAL -->
+<div class="blog-modal-overlay" id="blogModal">
+  <div class="blog-modal">
+    <button class="blog-modal-close" id="blogModalClose">&times;</button>
+    <div class="blog-modal-tag" id="modalTag"></div>
+    <h2 class="blog-modal-title" id="modalTitle"></h2>
+    <div class="blog-modal-meta" id="modalMeta"></div>
+    <div class="blog-modal-body" id="modalBody"></div>
+    <div style="margin-top:32px;text-align:center;">
+      <a href="index.html#signup" class="btn-primary">Ready to Start? Claim Your Free Class →</a>
+    </div>
+  </div>
+</div>
 
 <!-- CTA BAND -->
 <section class="cta-band">
@@ -163,6 +104,216 @@
 </footer>
 
 <script>
+const blogPosts = [
+  {
+    emoji: '👶',
+    tag: 'Parenting',
+    title: '5 Signs Your Child Is Ready for Martial Arts',
+    preview: 'Wondering if your 3 or 4-year-old is ready to start? Here\'s what to look for — and why starting early can make a huge difference.',
+    date: 'April 1, 2025',
+    readTime: '4 min read',
+    body: `
+      <p>Every parent wonders: is my kid ready? Here are the five signs we see at Kinetic that tell us a child is primed to thrive on the mat.</p>
+
+      <h3>1. They Can Follow Simple Instructions</h3>
+      <p>If your child can listen to "stand here" and "wait your turn," they're ready. We don't expect perfection — just the ability to try. Our Little Dragons program (ages 3–5) is specifically designed for short attention spans, with activities that change every 3–4 minutes.</p>
+
+      <h3>2. They Have Energy to Burn</h3>
+      <p>If your kid is bouncing off the walls at home, that's actually a great sign. Taekwondo channels that energy into structured movement — kicks, blocks, jumps — that leaves them happily exhausted by the end of class.</p>
+
+      <h3>3. They Show Interest in Physical Activity</h3>
+      <p>Whether it's jumping on the couch, pretending to be a ninja, or wrestling with siblings — these are all signs they'd love martial arts. We take that natural instinct and shape it into discipline and skill.</p>
+
+      <h3>4. They're Starting to Interact with Other Kids</h3>
+      <p>Martial arts is social. Partner drills, lining up by rank, and cheering for classmates all build social skills. If your child is starting to play with others (even imperfectly), they'll benefit from the dojo environment.</p>
+
+      <h3>5. YOU Feel Ready</h3>
+      <p>Honestly, the biggest factor is you. If you're ready to commit to bringing them consistently, they'll flourish. Kids pick up on your energy. When you're excited, they're excited.</p>
+
+      <p><strong>The bottom line:</strong> Most kids are ready between ages 3–5. And at Kinetic, we meet every child exactly where they are. Your first class is free — come see for yourself.</p>
+    `
+  },
+  {
+    emoji: '🥋',
+    tag: 'Confidence',
+    title: 'How Belt Testing Builds Real Confidence in Kids',
+    preview: 'It\'s not just about the belt color. The process of preparing, failing, and succeeding teaches kids something no classroom can.',
+    date: 'March 20, 2025',
+    readTime: '5 min read',
+    body: `
+      <p>At Kinetic, belt testing isn't just a ceremony — it's a transformation. Here's why the process matters more than the result.</p>
+
+      <h3>The Weeks Before: Building Grit</h3>
+      <p>Students spend weeks preparing. They practice forms at home, drill techniques in class, and face the reality that they might not be ready. This process — the struggle, the repetition, the doubt — is where confidence is actually built. Not from winning, but from persisting.</p>
+
+      <h3>Test Day: Facing Fear</h3>
+      <p>Standing in front of instructors, parents, and peers is nerve-wracking. Kids learn to perform under pressure. They learn that nervousness doesn't mean they can't do it. This lesson transfers directly to school presentations, sports tryouts, and job interviews later in life.</p>
+
+      <h3>After the Test: Earned Pride</h3>
+      <p>When a child ties on a new belt, they know they earned it. Nobody gave it to them. No participation trophy. They put in the work, faced the challenge, and came through. That feeling is addictive in the best way.</p>
+
+      <h3>What If They Don't Pass?</h3>
+      <p>It happens. And it's actually one of the most valuable experiences we offer. Kids learn that failure isn't the end — it's a stepping stone. They come back, work harder, and pass next time with even more pride.</p>
+
+      <p><strong>Every belt tells a story.</strong> And at Kinetic, we make sure that story is one of real growth, not just changing colors.</p>
+    `
+  },
+  {
+    emoji: '🛡️',
+    tag: 'Self Defense',
+    title: 'Why Every Teen Should Know Basic Self Defense',
+    preview: 'Bullying, peer pressure, and safety concerns are real. Here\'s why self-defense training gives teens an edge — mentally and physically.',
+    date: 'March 10, 2025',
+    readTime: '3 min read',
+    body: `
+      <p>Teens face a world that's more complex than ever. Self-defense training isn't about fighting — it's about confidence, awareness, and knowing you can protect yourself if you ever need to.</p>
+
+      <h3>Awareness Is the First Defense</h3>
+      <p>We teach teens to read situations before they escalate. Body language, positioning, verbal de-escalation — 90% of self-defense is never having to throw a punch. Our students learn to spot trouble and avoid it.</p>
+
+      <h3>Physical Skills for Real Situations</h3>
+      <p>We don't teach choreography. We teach what actually works: breaking grabs, creating distance, and getting to safety. Every technique we practice is tested and practical.</p>
+
+      <h3>The Anti-Bullying Effect</h3>
+      <p>Teens who train in martial arts carry themselves differently. They stand taller, make eye contact, and project confidence. Bullies target perceived weakness — and our students don't project that.</p>
+
+      <h3>Stress Relief They Actually Enjoy</h3>
+      <p>Forget meditation apps. Hitting pads, sparring with friends, and pushing physical limits is the stress relief teens actually want. And it works. Parents consistently tell us their teens are calmer and more focused after training.</p>
+
+      <p><strong>Every teen deserves to feel safe and confident.</strong> Self-defense training makes that possible.</p>
+    `
+  },
+  {
+    emoji: '❤️',
+    tag: 'Community',
+    title: 'What Makes Kinetic Different from Other Dojos',
+    preview: 'We\'re not a belt factory. We showed up at students\' houses during COVID. Here\'s the story of how Kinetic became a family.',
+    date: 'February 28, 2025',
+    readTime: '6 min read',
+    body: `
+      <p>There are plenty of martial arts schools in Fort Mill. So what makes Kinetic different? It comes down to one thing: we actually care.</p>
+
+      <h3>We Know Every Student by Name</h3>
+      <p>This isn't a franchise with rotating instructors. Nicole and Paul have been teaching for over 25 years. They know your child's strengths, struggles, and goals. They remember their birthday, their school struggles, and what makes them light up.</p>
+
+      <h3>We Showed Up During COVID</h3>
+      <p>When the world shut down, we didn't just go to Zoom. We drove to students' homes and taught in their yards. We weren't going to let a pandemic break what we'd built. That's the kind of commitment that defines Kinetic.</p>
+
+      <h3>We're Not a Belt Factory</h3>
+      <p>Some schools promote students on a schedule regardless of skill. We don't. Every belt at Kinetic is earned through real progress. That's why our belts mean something — to the kids, to the parents, and to us.</p>
+
+      <h3>Family Isn't Just a Word Here</h3>
+      <p>We host movie nights, pizza parties, and holiday events. Parents become friends. Kids become lifelong training partners. When you join Kinetic, you're not just signing up for classes — you're joining a community that has your back.</p>
+
+      <p><strong>Come see the difference for yourself.</strong> Your first class is free, and we think you'll feel it the moment you walk in.</p>
+    `
+  },
+  {
+    emoji: '💪',
+    tag: 'Fitness',
+    title: 'Adults: Why Krav Maga Beats the Gym Every Time',
+    preview: 'Tired of treadmills and dumbbells? Krav Maga gives you real fitness, real skills, and a real community — all in one class.',
+    date: 'February 15, 2025',
+    readTime: '4 min read',
+    body: `
+      <p>Let's be honest: the gym is boring. You know it. We know it. Here's why adults are ditching their memberships and training Krav Maga at Kinetic instead.</p>
+
+      <h3>You'll Actually Want to Show Up</h3>
+      <p>Every class is different. Striking combos, partner drills, scenario training, pad work — you never do the same workout twice. And because it's skill-based, there's always something new to learn. No more staring at a treadmill screen.</p>
+
+      <h3>Real Fitness, Not Vanity Fitness</h3>
+      <p>Krav Maga builds functional strength, cardio endurance, flexibility, and explosive power. You'll be in better shape than most gym-goers, and you'll have skills to show for it.</p>
+
+      <h3>Learn to Protect Yourself and Your Family</h3>
+      <p>This is the part no gym can offer. Krav Maga is a real-world self-defense system used by military and law enforcement worldwide. You'll learn strikes, defenses against grabs and chokes, ground defense, and situational awareness.</p>
+
+      <h3>Train Alongside Your Kids (or Solo)</h3>
+      <p>Many of our adult students started because their kids were already at Kinetic. Now they train at the same dojo — sometimes even in overlapping time slots. It's a family activity that actually makes you stronger.</p>
+
+      <p><strong>Saturday mornings at 8:00 AM.</strong> That's all it takes to start. No experience needed.</p>
+    `
+  },
+  {
+    emoji: '🧠',
+    tag: 'Focus',
+    title: 'How Taekwondo Helps Kids with ADHD Focus Better',
+    preview: 'Structure, movement, and respect — the three ingredients that help kids who struggle with attention thrive on the mat.',
+    date: 'February 1, 2025',
+    readTime: '5 min read',
+    body: `
+      <p>If your child has ADHD (or you suspect they might), martial arts could be one of the best things you do for them. Here's why Taekwondo specifically works so well.</p>
+
+      <h3>Structure They Can Feel</h3>
+      <p>Every class follows the same ritual: bow in, warm up, drill, practice, cool down, bow out. Kids with ADHD thrive on predictable structure. They know what's coming next, which reduces anxiety and increases focus.</p>
+
+      <h3>Movement Is the Medicine</h3>
+      <p>Research consistently shows that physical activity improves executive function in kids with ADHD. Taekwondo combines intense physical movement with mental focus — memorizing forms, reacting to partners, controlling their body. It's like a brain workout disguised as fun.</p>
+
+      <h3>Short Bursts, Not Long Lectures</h3>
+      <p>We change activities every 3–5 minutes. Kicks, then forms, then partner work, then a game. This keeps ADHD brains engaged because there's always something new happening. No sitting still for 45 minutes.</p>
+
+      <h3>Respect and Self-Regulation</h3>
+      <p>The dojo teaches kids to wait their turn, control their impulses, and respect their training partners. These aren't just martial arts skills — they're life skills that transfer directly to the classroom and home.</p>
+
+      <h3>Success They Can See</h3>
+      <p>Belt promotions give kids with ADHD tangible proof of their progress. In a world where they often hear "try harder" or "pay attention," a new belt says "you did it." That's powerful.</p>
+
+      <p><strong>We've seen it hundreds of times.</strong> Kids who couldn't sit still in school become focused, disciplined martial artists. It doesn't happen overnight, but it happens.</p>
+    `
+  }
+];
+
+// Render blog cards
+const grid = document.getElementById('blogGrid');
+blogPosts.forEach((post, i) => {
+  const card = document.createElement('article');
+  card.className = 'blog-card';
+  card.style.cursor = 'pointer';
+  card.innerHTML = `
+    <div class="blog-tag">${post.tag}</div>
+    <h2><span class="blog-emoji">${post.emoji}</span> ${post.title}</h2>
+    <p>${post.preview}</p>
+    <div class="blog-meta">
+      <span>${post.date}</span>
+      <span>&middot;</span>
+      <span>${post.readTime}</span>
+    </div>
+  `;
+  card.addEventListener('click', () => openBlogModal(i));
+  grid.appendChild(card);
+});
+
+// Modal logic
+const modal = document.getElementById('blogModal');
+const modalTag = document.getElementById('modalTag');
+const modalTitle = document.getElementById('modalTitle');
+const modalMeta = document.getElementById('modalMeta');
+const modalBody = document.getElementById('modalBody');
+
+function openBlogModal(index) {
+  const post = blogPosts[index];
+  modalTag.textContent = post.emoji + ' ' + post.tag;
+  modalTitle.textContent = post.title;
+  modalMeta.textContent = post.date + ' · ' + post.readTime;
+  modalBody.innerHTML = post.body;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBlogModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('blogModalClose').addEventListener('click', closeBlogModal);
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) closeBlogModal();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeBlogModal();
+});
+
+// Mobile menu
 document.querySelector('.nav-toggle').addEventListener('click', function() {
   document.querySelector('.nav-links').classList.toggle('open');
 });

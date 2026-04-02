@@ -398,7 +398,7 @@ section {
 }
 
 .program-card p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--gray);
   line-height: 1.6;
   margin-bottom: 20px;
@@ -548,14 +548,17 @@ section {
 
 .benefit {
   padding: 28px 24px;
-  border: 1px solid rgba(0,0,0,0.08);
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
   border-radius: var(--radius);
-  transition: border-color 0.2s, background 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
 .benefit:hover {
   border-color: var(--green);
-  background: rgba(26,122,46,0.05);
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 .benefit-icon { font-size: 2rem; margin-bottom: 12px; }
@@ -630,7 +633,7 @@ section {
   background: var(--soft);
   border-radius: var(--radius);
   padding: 48px 40px;
-  max-width: 100%;
+  max-width: 720px;
   margin: 0 auto;
   box-shadow: 0 8px 40px rgba(0,0,0,0.08);
 }
@@ -692,7 +695,7 @@ section {
 
 /* ── INFO BAR ── */
 .info-bar {
-  background: var(--cream);
+  background: #E6E4D9;
   padding: 40px max(24px, calc((100% - 1140px) / 2));
   display: flex;
   flex-wrap: wrap;

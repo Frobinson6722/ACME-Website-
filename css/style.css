@@ -6,7 +6,7 @@
   --cream: #EEECE2;
   --white: #FAFAFA;
   --gold: #F4A823;
-  --soft: #F0F5F1;
+  --soft: #E8E6DC;
   --gray: #6B6B6B;
   --border-light: #D6D3C8;
   --purple: #6366F1;
@@ -574,7 +574,7 @@ section {
 .benefit p { font-size: 0.875rem; color: rgba(0,0,0,0.5); line-height: 1.6; }
 
 /* ── TESTIMONIALS ── */
-.testimonials { background: var(--white); }
+.testimonials { background: var(--cream); }
 
 .reviews-grid {
   display: grid;
@@ -695,7 +695,7 @@ section {
 
 /* ── INFO BAR ── */
 .info-bar {
-  background: #E6E4D9;
+  background: var(--soft);
   padding: 40px max(24px, calc((100% - 1140px) / 2));
   display: flex;
   flex-wrap: wrap;

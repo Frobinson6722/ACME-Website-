@@ -1269,7 +1269,7 @@ footer a:hover { color: var(--white); }
 #comingUpGrid .program-card ul::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
 
 /* ── SECTION SPACING ── */
-.hero .ribbon { margin-top: 0; }
+.ribbon + section { padding-top: 56px; }
 
 #comingUp { padding-top: 80px; }
 

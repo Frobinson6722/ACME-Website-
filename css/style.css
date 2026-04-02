@@ -266,9 +266,9 @@ section { padding: 72px 24px; }
 
 .programs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 960px;
+  width: 100%;
 }
 
 .program-card {
@@ -346,9 +346,9 @@ section { padding: 72px 24px; }
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  max-width: 860px;
+  width: 100%;
 }
 
 .benefit {
@@ -380,9 +380,9 @@ section { padding: 72px 24px; }
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  max-width: 960px;
+  width: 100%;
 }
 
 .review-card {
@@ -540,9 +540,9 @@ footer a:hover { color: var(--white); }
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  max-width: 960px;
+  width: 100%;
 }
 
 .blog-card {
@@ -828,4 +828,6 @@ footer a:hover { color: var(--white); }
   .btn-primary, .btn-ghost { text-align: center; width: 100%; max-width: 320px; }
   .signup-form { padding: 28px 20px; }
   .cta-band { padding: 52px 20px; }
+  .programs-grid, .benefits-grid { grid-template-columns: 1fr; }
+  .reviews-grid, .blog-grid { grid-template-columns: 1fr; }
 }

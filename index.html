@@ -12,7 +12,13 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">KINETIC <span>TKD</span></div>
+  <ul class="nav-links">
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#signup">Contact</a></li>
+    <li><a href="blog.html">Blog</a></li>
+  </ul>
   <a href="#signup" class="nav-cta">Free First Class</a>
+  <button class="nav-toggle" aria-label="Menu">☰</button>
 </nav>
 
 <!-- HERO -->
@@ -205,5 +211,10 @@
   <p>© 2025 Kinetic Taekwondo · Fort Mill, SC · <a href="#">Privacy Policy</a></p>
 </footer>
 
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
 </body>
 </html>

@@ -62,6 +62,31 @@ nav {
   transition: background 0.2s, transform 0.1s;
 }
 
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--white); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .nav-cta:hover { background: var(--green-dark); transform: scale(1.04); }
 
 /* ── HERO ── */
@@ -497,6 +522,70 @@ footer {
 footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
 footer a:hover { color: var(--white); }
 
+/* ── BLOG ── */
+.blog-header {
+  background: var(--dark);
+  padding: 140px 24px 60px;
+}
+
+.blog-header .section-title { color: var(--white); }
+
+.blog-posts { background: var(--soft); }
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 960px;
+}
+
+.blog-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+.blog-tag {
+  display: inline-block;
+  background: rgba(26,122,46,0.1);
+  color: var(--green);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+}
+
+.blog-card h2 {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.blog-card p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.blog-meta {
+  display: flex;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -505,8 +594,20 @@ footer a:hover { color: var(--white); }
 
 /* ── MOBILE ── */
 @media (max-width: 600px) {
-  nav { padding: 14px 18px; }
+  nav { padding: 14px 18px; flex-wrap: wrap; }
   .nav-logo { font-size: 1.3rem; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    padding-top: 16px;
+    order: 3;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 1rem; }
+  .nav-cta { display: none; }
+  .nav-toggle { display: block; }
   .hero { padding: 100px 20px 50px; }
   section { padding: 56px 20px; }
   .hero-actions { flex-direction: column; }

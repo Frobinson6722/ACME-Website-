@@ -151,7 +151,7 @@ nav {
 .hero--compact {
   min-height: 100vh;
   justify-content: center;
-  padding: 100px max(24px, calc((100% - 1140px) / 2)) 40px;
+  padding: 100px max(24px, calc((100% - 1140px) / 2)) 80px;
 }
 
 .hero-eyebrow {

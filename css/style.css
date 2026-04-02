@@ -1268,6 +1268,11 @@ footer a:hover { color: var(--white); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes navSlideIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ── MOBILE ── */
 @media (max-width: 600px) {
   nav { padding: 14px 18px; flex-wrap: wrap; }
@@ -1281,13 +1286,26 @@ footer a:hover { color: var(--white); }
     right: 0;
     bottom: 0;
     z-index: 200;
-    background: rgba(13,13,13,0.97);
+    background: #0d0d0d;
     padding: 100px 32px 40px;
-    gap: 20px;
+    gap: 32px;
     align-items: flex-end;
+    justify-content: flex-start;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1.2rem; color: var(--white); text-align: right; }
+  .nav-links li {
+    opacity: 0;
+    transform: translateY(-12px);
+    animation: navSlideIn 0.35s ease forwards;
+  }
+  .nav-links li:nth-child(1) { animation-delay: 0.05s; }
+  .nav-links li:nth-child(2) { animation-delay: 0.1s; }
+  .nav-links li:nth-child(3) { animation-delay: 0.15s; }
+  .nav-links li:nth-child(4) { animation-delay: 0.2s; }
+  .nav-links li:nth-child(5) { animation-delay: 0.25s; }
+  .nav-links li:nth-child(6) { animation-delay: 0.3s; }
+  .nav-links li:nth-child(7) { animation-delay: 0.35s; }
+  .nav-links a { font-size: 1.4rem; color: var(--white); text-align: right; }
   .nav-cta { display: none; }
   .nav-toggle { display: block; margin-left: auto; position: relative; z-index: 201; }
   .hero { padding: 100px 20px 50px; }
